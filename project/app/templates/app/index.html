@@ -1,0 +1,110 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'app/index.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'app/form.css' %}" />
+  <div id="banner" class="banner">
+    <div class="container">
+      <div class="box">
+        <h1>Windward Apps</h1>
+        <h2>Modern custom software done right</h2>
+      </div>
+    </div>
+  </div>
+  <div class="container cards">
+    <div class="card">
+      <h3>Engineering</h3>
+      <p>We build stunning applications using the latest technologies and engineering best practices</p>
+    </div>
+    <div class="card">
+      <h3>Project Management</h3>
+      <p>From requirements to deployment, you have accountability and visibility at all times</p>
+    </div>
+    <div class="card">
+      <h3>Process</h3>
+      <p>Following the Agile model, you see new features rapidly and consistently</p>
+    </div>
+  </div>
+  <div class="about">
+    <div class="container">
+      <h3>About</h3>
+      <p>
+        We are a cutting edge technology company, dedicated to building web and mobile apps that solve a variety of business problems.
+        We help your organization run more efficiently, help generate revenue, attract new customers, and anything else
+        that makes your life easier. From workflow automation, to e-commerce, to startup platforms, and everything in between,
+        we do it and we can help.
+      </p>
+    </div>
+  </div>
+  <div class="why-us">
+    <div class="container">
+      <h3>Why Us</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ex est, gravida eget ex ut, lobortis finibus ipsum.
+        Suspendisse in tempor tortor. Etiam et lacus nec est posuere posuere. Aliquam maximus finibus velit, at dictum dui
+        tincidunt ut. Nulla sit amet fermentum erat, a imperdiet enim. Aenean tincidunt faucibus nulla volutpat feugiat. Praesent
+        scelerisque elementum nulla sit amet condimentum. Nulla pharetra tempor dolor. Aliquam dignissim blandit efficitur. Nam
+        hendrerit, justo quis consectetur ullamcorper, purus ex ullamcorper leo, iaculis dapibus nisl enim ut purus. Nunc at nisl
+        placerat, volutpat ipsum ac, sagittis nibh. Nullam tincidunt, velit vel congue mattis, est leo laoreet ipsum, eleifend
+        sagittis ligula eros in ligula.
+      </p>
+    </div>
+  </div>
+  <div class="how-we-work">
+    <div class="container">
+      <h3>How We Work</h3>
+      <p>
+        Ut lacinia mi libero, eu mollis enim semper molestie. Vestibulum quis tristique justo. Duis ac vestibulum enim.
+        Nam non quam at quam pellentesque rutrum. Donec quis felis arcu. Maecenas id fringilla nisl. Nunc euismod porta
+        nisi, in congue nisl pretium eget. Cras egestas feugiat quam ut posuere. Sed nulla lectus, ullamcorper vel
+        hendrerit ut, placerat at metus.
+      </p>
+    </div>
+  </div>
+  <div class="contact">
+    <div class="container">
+      <h3>Contact</h3>
+      <form id="contact-form" action="/contact" method="post">
+        {% csrf_token %}
+        <div data-input-field data-name="name" data-label="Name"></div>
+        <div data-input-field data-name="email" data-label="Email"></div>
+        <div data-input-field data-name="phone" data-label="Phone"></div>
+        <div data-big-input-field data-name="message" data-label="Message"></div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      setTimeout(function() {
+        var scrollNode = document.documentElement;
+        var nav = document.getElementById('nav');
+        var banner = document.getElementById('banner');
+        var targetY = banner.clientHeight - nav.clientHeight;
+        window.addEventListener('scroll', function(e) {
+          if (scrollNode.scrollTop > targetY && !nav.classList.contains('scrolled')) {
+            nav.classList.add('scrolled');
+          } else if (scrollNode.scrollTop < targetY && nav.classList.contains('scrolled')) {
+            nav.classList.remove('scrolled');
+          }
+        });
+      }, 250);
+
+      $('#contact-form').on('submit', function(e) {
+        e.preventDefault();
+        $.post({
+          url: '/contact',
+          data: $(this).serialize()
+        }).then(function(data) {
+          console.log('success: ', data);
+        }).catch(function(xhr) {
+          console.log('error: ', xhr.responseJSON);
+        })
+      })
+    });
+  </script>
+
+  <script src="{% static 'app/form.js' %}"></script>
+{% endblock %}
