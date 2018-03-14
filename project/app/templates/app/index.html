@@ -65,7 +65,7 @@
   <div class="contact">
     <div class="container">
       <h3>Contact</h3>
-      <form id="contact-form" action="/contact" method="post">
+      <form id="contact-form" action="/contact" method="post" data-ajax-form>
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Submit</button>
@@ -88,20 +88,9 @@
           }
         });
       }, 250);
-
-      $('#contact-form').on('submit', function(e) {
-        e.preventDefault();
-        $.post({
-          url: '/contact',
-          data: $(this).serialize()
-        }).then(function(data) {
-          console.log('success: ', data);
-        }).catch(function(xhr) {
-          console.log('error: ', xhr.responseJSON);
-        })
-      })
     });
   </script>
 
   <script src="{% static 'app/form.js' %}"></script>
+  <script src="{% static 'app/ajaxForm.js' %}"></script>
 {% endblock %}

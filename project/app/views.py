@@ -1,7 +1,7 @@
 from django.http import HttpResponse, JsonResponse, HttpResponseNotAllowed
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from django.views.generic.edit import BaseFormView, FormView
+from django.views.generic.edit import FormView
 from django.contrib.auth import authenticate
 
 from .forms import ContactForm, LoginForm
@@ -17,7 +17,7 @@ class JsonErrorResponse(JsonResponse):
         data['success'] = False
         super(JsonErrorResponse, self).__init__(data, **kwargs)
 
-class AjaxFormView(BaseFormView):
+class AjaxFormView(FormView):
     def form_valid(self, form):
         return JsonSuccessResponse()
 
