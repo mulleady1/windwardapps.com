@@ -5,7 +5,8 @@ from django.views.generic.edit import FormView
 from django.contrib.auth import authenticate
 
 from .forms import ContactForm, LoginForm
-from shared.views import AjaxFormView, JsonErrorResponse
+from shared.http import JsonErrorResponse
+from shared.views import AjaxFormView
 
 class ContactView(AjaxFormView):
     form_class = ContactForm
@@ -24,3 +25,5 @@ class LoginView(FormView):
         user = authenticate(form)
         if user is None:
             return JsonErrorResponse({ 'msg': 'Invalid credentials.' })
+
+        return super(LoginView, self).form_valid(form)
