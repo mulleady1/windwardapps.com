@@ -67,10 +67,7 @@
       <h3>Contact</h3>
       <form id="contact-form" action="/contact" method="post">
         {% csrf_token %}
-        <div data-input-field data-name="name" data-label="Name"></div>
-        <div data-input-field data-name="email" data-label="Email"></div>
-        <div data-input-field data-name="phone" data-label="Phone"></div>
-        <div data-big-input-field data-name="message" data-label="Message"></div>
+        {{ form.as_p }}
         <button type="submit">Submit</button>
       </form>
     </div>

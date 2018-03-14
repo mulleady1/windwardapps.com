@@ -6,35 +6,32 @@ from django.contrib.auth import authenticate
 
 from .forms import ContactForm, LoginForm
 
-class AjaxFormView(BaseFormView):
-    def get(self, form):
-        return HttpResponseNotAllowed(['POST'])
-
 class JsonSuccessResponse(JsonResponse):
     def __init__(self, data={}, **kwargs):
         data['success'] = True
-        super().__init__(data, **kwargs)
+        super(JsonSuccessResponse, self).__init__(data, **kwargs)
 
 class JsonErrorResponse(JsonResponse):
     status_code = 400
-
     def __init__(self, data={}, **kwargs):
         data['success'] = False
-        super().__init__(data, **kwargs)
+        super(JsonErrorResponse, self).__init__(data, **kwargs)
 
-
-def index(request):
-    return render(request, 'app/index.html')
-
-class ContactView(AjaxFormView):
-    form_class = ContactForm
-
+class AjaxFormView(BaseFormView):
     def form_valid(self, form):
-        #form.send_email()
         return JsonSuccessResponse()
 
     def form_invalid(self, form):
-        return JsonErrorResponse()
+        return JsonErrorResponse({ 'errors': form.errors })
+
+
+class ContactView(AjaxFormView):
+    form_class = ContactForm
+    template_name = 'app/index.html'
+
+    def form_valid(self, form):
+        form.send_email()
+        return super(ContactView, self).form_valid(form)
 
 class LoginView(FormView):
     form_class = LoginForm

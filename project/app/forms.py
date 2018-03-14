@@ -1,19 +1,20 @@
 from django import forms
 
-class ContactForm(forms.Form):
+class BaseForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        kwargs.setdefault('label_suffix', '')
+        super(BaseForm, self).__init__(*args, **kwargs)
+
+class ContactForm(BaseForm):
     name = forms.CharField()
     email = forms.EmailField()
-    phone = forms.IntegerField()
+    phone = forms.CharField()
     message = forms.CharField(widget=forms.Textarea)
 
     def send_email(self):
         # send email using the self.cleaned_data dictionary
         pass
 
-class LoginForm(forms.Form):
+class LoginForm(BaseForm):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput())
-
-    def __init__(self, *args, **kwargs):
-        kwargs.setdefault('label_suffix', '')
-        super(LoginForm, self).__init__(*args, **kwargs)

@@ -1,9 +1,9 @@
 from django.urls import path
 
-from . import views
+from .views import ContactView, LoginView
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('contact', views.ContactView.as_view(), name='contact'),
-    path('login', views.LoginView.as_view(), name='login'),
+    path('', ContactView.as_view(), name='index'),
+    path('contact', ContactView.as_view(), name='contact'),
+    path('login', LoginView.as_view(), name='login'),
 ]
