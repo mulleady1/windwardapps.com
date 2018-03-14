@@ -60,6 +60,12 @@ nav.scrolled {
   }
 }
 
+@media (min-width: 1400px) {
+  .cards {
+    justify-content: space-between;
+  }
+}
+
 .card {
   background: #fff;
   box-shadow: 0 22px 68px -9px rgba(0,0,0,.08);
