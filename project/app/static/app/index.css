@@ -1,3 +1,17 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  color: #fff;
+  transition: background 150ms ease-in-out;
+  z-index: 1;
+}
+nav.scrolled {
+  background: #009cb2ee;
+}
+
 .banner {
   background: white url("images/banner.jpg") no-repeat;
   background-size: cover;

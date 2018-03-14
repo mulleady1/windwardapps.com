@@ -1,11 +1,11 @@
-.input-field {
+form > p {
   position: relative;
   width: 100%;
   padding-top: 20px;
   margin-bottom: 17px;
   cursor: text;
 }
-.input-field label {
+form > p label {
   position: absolute;
   transition: all 150ms ease-in-out;
   top: 31px;
@@ -13,20 +13,20 @@
   color: #ccc;
   font-size: 14px;
 }
-.input-field input:focus + label,
-.input-field textarea:focus + label {
+form > p.focus label,
+form > p.has-value:not(.focus) label {
   top: 1px;
   left: 1px;
-  color: blue;
   font-size: 12px;
 }
-.input-field input:not(:focus) + label,
-.input-field textarea:not(:focus) + label {
-  cursor: text;
+form > p.focus label {
+  color: blue;
 }
-.input-field input.has-value:not(:focus) + label,
-.input-field textarea.has-value:not(:focus) + label {
-  display: none;
+form > p.has-value:not(.focus) label {
+  color: #888;
+}
+form > p:not(.focus) label {
+  cursor: text;
 }
 textarea {
   min-height: 200px;

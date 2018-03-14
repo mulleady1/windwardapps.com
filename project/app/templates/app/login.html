@@ -1,0 +1,25 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'app/form.css' %}" />
+  <style>
+    form {
+      max-width: 350px;
+      margin: 25px auto;
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+  </style>
+  <div class="container">
+    <form id="form" action="/login" method="post">
+      <h2>Login</h2>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script src="{% static 'app/form.js' %}"></script>
+{% endblock %}
