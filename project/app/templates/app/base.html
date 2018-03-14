@@ -19,7 +19,11 @@
       <div class="container">
         <div class="logo"><a href="/">WA</a></div>
         <ul class="links">
+          {% if user and user.is_authenticated %}
+          <li><a href="/logout">Logout {{ user.username }}</a></li>
+          {% else %}
           <li><a href="/login">Login</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>

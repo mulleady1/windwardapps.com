@@ -1,20 +1,21 @@
-from django.http import HttpResponse, JsonResponse, HttpResponseNotAllowed
+from django.http import HttpResponse, JsonResponse, HttpResponseNotAllowed, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
+from django.views.generic.base import RedirectView
 from django.views.generic.edit import FormView
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login, logout
 
 from .forms import ContactForm, LoginForm
 from shared.http import JsonErrorResponse
 from shared.views import AjaxFormView
 
-class ContactView(AjaxFormView):
+class IndexView(AjaxFormView):
     form_class = ContactForm
     template_name = 'app/index.html'
 
     def form_valid(self, form):
         form.send_email()
-        return super(ContactView, self).form_valid(form)
+        return super(IndexView, self).form_valid(form)
 
 class LoginView(FormView):
     form_class = LoginForm
@@ -22,8 +23,16 @@ class LoginView(FormView):
     success_url = '/'
 
     def form_valid(self, form):
-        user = authenticate(form)
+        user = authenticate(username=form.data['username'], password=form.data['password'])
         if user is None:
             return JsonErrorResponse({ 'msg': 'Invalid credentials.' })
 
+        login(self.request, user)
         return super(LoginView, self).form_valid(form)
+
+class LogoutView(RedirectView):
+    url = '/'
+
+    def get(self, request, *args, **kwargs):
+        logout(request)
+        return super(LogoutView, self).get(request, *args, **kwargs)
