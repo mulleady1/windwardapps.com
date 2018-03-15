@@ -54,6 +54,10 @@ button:active {
 button:focus {
   outline: none;
 }
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
 
 nav {
   background-image: linear-gradient(45deg, #00d8ff80, #00ff7f80);
@@ -95,4 +99,9 @@ footer {
 
 form button[type="submit"] {
   margin-top: 15px;
+}
+form .message {
+  margin: 20px 0;
+  text-align: center;
+  color: red;
 }
