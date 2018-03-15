@@ -17,6 +17,8 @@ $(document).ready(function() {
 
         if (successUrl) {
           window.location = el.dataset.successUrl;
+        } else if (el._onSuccess) {
+          el._onSuccess();
         }
       }).catch(function(xhr) {
         var data = xhr.responseJSON;

@@ -105,3 +105,6 @@ form .message {
   text-align: center;
   color: red;
 }
+form .success-message {
+  margin: 20px 0;
+}

@@ -88,6 +88,11 @@
           }
         });
       }, 250);
+
+      var el = $('#contact-form')[0];
+      el._onSuccess = function() {
+        $(el).html('<div class="success-message">Thanks! We\'ll be in touch soon.</div>');
+      }
     });
   </script>
 
