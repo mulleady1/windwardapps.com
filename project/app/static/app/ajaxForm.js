@@ -25,14 +25,24 @@ $(document).ready(function() {
         console.log('error: ', data);
         btn.disabled = false;
         btn.textContent = text;
-        $(el).find('.message').html(data.msg);
+        if (data.msg) {
+          var $message = $(el).find('.message');
+          $message.html(data.msg);
+          $(el).find('input, textarea').one('input', function() {
+            $message.html('');
+          });
+        } else if (data.errors) {
+          Object.keys(data.errors).forEach(key => {
+            var msg = data.errors[key][0],
+              $msg = $('<div class="field-message">' + msg + '</div>'),
+              $input = $(el).find('[name="' + key + '"]');
 
-        var onInput = function() {
-          $(el).find('.message').html('');
-          $(el).find('input').off('input', onInput);
-        };
-
-        $(el).find('input').on('input', onInput);
+            $input.parent().append($msg);
+            $input.one('input', function() {
+              $msg.remove();
+            });
+          });
+        }
       });
     });
   });
