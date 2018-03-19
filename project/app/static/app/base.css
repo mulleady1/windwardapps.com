@@ -109,3 +109,11 @@ form .field-message {
 form .success-message {
   margin: 20px 0;
 }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+td {
+  padding: 3px 10px;
+}

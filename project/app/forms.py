@@ -1,4 +1,8 @@
 from django import forms
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
+
 from shared.forms import BaseForm
 
 
@@ -9,8 +13,16 @@ class ContactForm(BaseForm):
     message = forms.CharField(widget=forms.Textarea)
 
     def send_email(self):
-        # send email using the self.cleaned_data dictionary
-        pass
+        html = render_to_string('app/email/contact.html', self.cleaned_data)
+        send_mail(
+            'Contact request for windwardapps.com',
+            None,
+            'noreply@windwardapps.com',
+            [settings.CONTACT_EMAIL],
+            fail_silently=False,
+            html_message=html
+        )
+
 
 class LoginForm(BaseForm):
     username = forms.CharField()

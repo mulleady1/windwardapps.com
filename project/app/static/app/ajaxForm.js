@@ -25,7 +25,17 @@ $(document).ready(function() {
         console.log('error: ', data);
         btn.disabled = false;
         btn.textContent = text;
-        if (data.msg) {
+        if (!data) {
+          var $msg = $('<div class="message">An error occurred. Please try again later.</div>');
+          $(el).prepend($msg);
+          setTimeout(function() {
+            $msg.css('transition', 'max-height 150ms');
+            $msg.css('max-height', 0);
+            setTimeout(function() {
+              $msg.remove();
+            }, 250);
+          }, 5000);
+        } else if (data.msg) {
           var $message = $(el).find('.message');
           $message.html(data.msg);
           $(el).find('input, textarea').one('input', function() {
