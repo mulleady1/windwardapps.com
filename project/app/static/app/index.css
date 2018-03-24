@@ -97,7 +97,7 @@ nav.scrolled {
 }
 
 .about {
-  background: #f0f6ff;
+  background: #f9f9f9;
   padding: 100px 0;
 }
 
@@ -109,13 +109,13 @@ nav.scrolled {
   margin-bottom: 30px;
 }
 
-.how-we-work {
-  background: #fafcfe;
+.why-us {
+  background: #fff;
   padding: 100px 0;
 }
 
-.why-us {
-  background: #f1f2f3;
+.how-we-work {
+  background: #f9f9f9;
   padding: 100px 0;
 }
 
