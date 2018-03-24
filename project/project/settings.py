@@ -122,11 +122,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-EMAIL_HOST = ''
-EMAIL_PORT = ''
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 CONTACT_EMAIL = os.environ['WA_CONTACT_EMAIL']
+EMAIL_API_URL = os.environ['EMAIL_API_URL']
+EMAIL_API_KEY = os.environ['EMAIL_API_KEY']
 
 ALLOWED_HOSTS = ['*']
