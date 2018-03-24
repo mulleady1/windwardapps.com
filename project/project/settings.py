@@ -128,3 +128,5 @@ EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 CONTACT_EMAIL = os.environ['WA_CONTACT_EMAIL']
+
+ALLOWED_HOSTS = ['*']

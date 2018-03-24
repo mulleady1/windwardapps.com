@@ -2,22 +2,25 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Windward Apps</title>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="//fonts.googleapis.com/css?family=Montserrat:200,300,400" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'app/base.css' %}" />
-  </head>
-  <body>
-    <div id="main">
-      {% block content %}{% endblock %}
-    </div>
-    <footer>
-      &copy; 2018 Windward Apps
-    </footer>
-  </body>
+  <title>Windward Apps</title>
+
+  <link href="//fonts.googleapis.com/css?family=Montserrat:200,300,400" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'app/base.css' %}" />
+</head>
+
+<body>
+  <div id="main">
+    {% block content %}{% endblock %}
+  </div>
+  <footer style="margin-top:50px">
+    &copy; 2018 Windward Apps
+  </footer>
+</body>
+
 </html>

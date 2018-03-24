@@ -16,7 +16,7 @@ class ContactForm(BaseForm):
         html = render_to_string('app/email/contact.html', self.cleaned_data)
         send_mail(
             'Contact request for windwardapps.com',
-            None,
+            '',
             'noreply@windwardapps.com',
             [settings.CONTACT_EMAIL],
             fail_silently=False,
