@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '4x@g!w)l*h#h5b-a@p4w5&ai^+u3(xg2s)3)h-j&6i2ixdqu6s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ['WA_DEBUG']
 
 ALLOWED_HOSTS = []
 
@@ -122,9 +122,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-EMAIL_HOST = ''
-EMAIL_PORT = ''
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 CONTACT_EMAIL = os.environ['WA_CONTACT_EMAIL']
+EMAIL_API_URL = os.environ['WA_EMAIL_API_URL']
+EMAIL_API_KEY = os.environ['WA_EMAIL_API_KEY']
+
+ALLOWED_HOSTS = ['*']

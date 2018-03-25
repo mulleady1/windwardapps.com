@@ -1,5 +1,4 @@
 from django import forms
-from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 
@@ -13,15 +12,14 @@ class ContactForm(BaseForm):
     message = forms.CharField(widget=forms.Textarea)
 
     def send_email(self):
-        html = render_to_string('app/email/contact.html', self.cleaned_data)
-        send_mail(
-            'Contact request for windwardapps.com',
-            None,
-            'noreply@windwardapps.com',
-            [settings.CONTACT_EMAIL],
-            fail_silently=False,
-            html_message=html
-        )
+        data = {
+            'from': 'noreply@windwardapps.com',
+            'to': [settings.CONTACT_EMAIL],
+            'subject': 'Contact request for windwardapps.com',
+            'html': render_to_string('app/email/contact.html', self.cleaned_data)
+        }
+
+        return super().send_email(data)
 
 
 class LoginForm(BaseForm):
