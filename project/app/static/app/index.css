@@ -9,7 +9,8 @@ nav {
   z-index: 1;
 }
 nav.scrolled {
-  background-image: linear-gradient(45deg, #00d8fff0, #00afaff0);
+  background-color: #7a7adbaa;
+  background-image: linear-gradient(315deg, #7a7adbaa 0%, #170e13aa 74%);
 }
 
 .banner {
