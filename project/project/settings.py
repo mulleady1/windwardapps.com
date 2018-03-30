@@ -122,9 +122,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = '/var/www/windwardapps.com/static/'
 
-CONTACT_EMAIL = os.environ['WA_CONTACT_EMAIL']
-EMAIL_API_URL = os.environ['WA_EMAIL_API_URL']
-EMAIL_API_KEY = os.environ['WA_EMAIL_API_KEY']
+CONTACT_EMAIL = os.environ.get('WA_CONTACT_EMAIL', '')
+EMAIL_API_URL = os.environ.get('WA_EMAIL_API_URL', '')
+EMAIL_API_KEY = os.environ.get('WA_EMAIL_API_KEY', '')
 
 ALLOWED_HOSTS = ['*']
 
