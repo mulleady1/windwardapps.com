@@ -128,3 +128,28 @@ nav.scrolled {
 form {
   max-width: 600px;
 }
+
+.budgeter {
+  background: #0000;
+  font-family: Bitter;
+  border: 1px solid #008840;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  position: relative;
+}
+.budgeter .dollar {
+  position: absolute;
+  font-size: 80px;
+  color: #008840;
+  opacity: .5;
+  top: -12px;
+  left: 8px;
+}
+.budgeter .b {
+  font-size: 75px;
+  color: #008840;
+  position: absolute;
+  top: -6px;
+  left: 16px;
+}
