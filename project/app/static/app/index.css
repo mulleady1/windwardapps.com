@@ -8,6 +8,7 @@ nav {
   transition: background 150ms ease-in-out;
   z-index: 1;
 }
+
 nav.scrolled {
   background-color: #7a7adbaa;
   background-image: linear-gradient(315deg, #7a7adbaa 0%, #170e13aa 74%);
@@ -69,7 +70,7 @@ nav.scrolled {
 
 .card {
   background: #fff;
-  box-shadow: 0 22px 68px -9px rgba(0,0,0,.08);
+  box-shadow: 0 22px 68px -9px rgba(0, 0, 0, .08);
   padding: 50px;
   margin-bottom: 20px;
   margin-left: 20px;
@@ -97,48 +98,82 @@ nav.scrolled {
   text-align: center;
 }
 
-.about {
-  background: #f9f9f9;
+.section {
   padding: 100px 0;
+}
+
+.section:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.section:nth-child(odd) {
+  background: #fff;
 }
 
 .about h3,
 .how-we-work h3,
+.showcase h3,
 .why-us h3,
 .contact h3 {
   font-size: 30px;
   margin-bottom: 30px;
 }
 
-.why-us {
-  background: #fff;
-  padding: 100px 0;
-}
-
-.how-we-work {
-  background: #f9f9f9;
-  padding: 100px 0;
-}
-
-.contact {
-  background: #fff;
-  padding: 100px 0;
-}
-
 form {
   max-width: 600px;
 }
 
+.showcase a {
+  display: inline-block;
+  width: 50%;
+  height: 300px;
+  min-width: 150px;
+  min-height: 150px;
+}
+
+.showcase .overlay {
+  background-color: #0000;
+  transition: background-color 100ms ease;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 1px 15px 0px #0001;
+}
+
+.showcase .overlay:hover {
+  background-color: #0006;
+}
+
+.showcase .overlay:hover .logo {
+  opacity: 1;
+}
+
+.showcase .logo {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 100ms ease;
+}
+
 .budgeter {
+  background-image: url(images/budgeter.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  position: relative;
+}
+
+.budgeter-logo {
   background: #0000;
   font-family: Bitter;
   border: 1px solid #008840;
   border-radius: 50%;
-  width: 75px;
-  height: 75px;
-  position: relative;
 }
-.budgeter .dollar {
+
+.budgeter-logo .dollar {
   position: absolute;
   font-size: 80px;
   color: #008840;
@@ -146,7 +181,8 @@ form {
   top: -12px;
   left: 8px;
 }
-.budgeter .b {
+
+.budgeter-logo .b {
   font-size: 75px;
   color: #008840;
   position: absolute;
