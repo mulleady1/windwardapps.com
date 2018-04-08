@@ -123,19 +123,20 @@
 
 <script>
   $(document).ready(function() {
-    setTimeout(function() {
-      var scrollNode = document.documentElement;
-      var nav = document.getElementById('nav');
-      var banner = document.getElementById('banner');
-      var targetY = banner.clientHeight - nav.clientHeight;
-      window.addEventListener('scroll', function(e) {
-        if (scrollNode.scrollTop > targetY && !nav.classList.contains('scrolled')) {
-          nav.classList.add('scrolled');
-        } else if (scrollNode.scrollTop < targetY && nav.classList.contains('scrolled')) {
-          nav.classList.remove('scrolled');
-        }
-      });
-    }, 250);
+    var nav = document.getElementById('nav');
+    var banner = document.getElementById('banner');
+    var targetY = banner.clientHeight - nav.clientHeight;
+
+    function setNavbarState() {
+      if (window.pageYOffset > targetY && !nav.classList.contains('scrolled')) {
+        nav.classList.add('scrolled');
+      } else if (window.pageYOffset < targetY && nav.classList.contains('scrolled')) {
+        nav.classList.remove('scrolled');
+      }
+    }
+
+    setNavbarState();
+    window.addEventListener('scroll', setNavbarState);
 
     var el = $('#contact-form')[0];
     el._onSuccess = function() {

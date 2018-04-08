@@ -28,13 +28,6 @@ nav.scrolled {
   margin: 150px 0;
 }
 
-@media (max-width: 550px) {
-  .box {
-    padding: 30px;
-    margin-top: 100px;
-  }
-}
-
 .box h2 {
   margin-top: 30px;
   font-size: 21px;
@@ -44,28 +37,6 @@ nav.scrolled {
   display: flex;
   flex-wrap: wrap;
   padding: 100px 0 80px 0;
-}
-
-@media (max-width: 760px) {
-  .cards {
-    padding: 50px 0 30px 0;
-    justify-content: center;
-  }
-  .card {
-    margin-right: 20px;
-  }
-}
-
-@media (max-width: 425px) {
-  .cards {
-    justify-content: initial;
-  }
-}
-
-@media (min-width: 1400px) {
-  .cards {
-    justify-content: space-between;
-  }
 }
 
 .card {
@@ -132,7 +103,7 @@ form {
   display: inline-block;
   flex: 1 1 50%;
   height: 300px;
-  min-width: 400px;
+  min-width: 300px;
   min-height: 150px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -211,4 +182,70 @@ form {
 .showcase .your-logo {
   width: auto;
   height: auto;
+}
+
+@media (max-width: 550px) {
+  .box {
+    padding: 30px;
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: 760px) {
+  .cards {
+    padding: 50px 0 30px 0;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .card {
+    margin: 0;
+  }
+  .card+.card {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 425px) {
+  .cards {
+    justify-content: initial;
+  }
+  .card {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: none;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .cards {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 640px) {
+  .showcase .items {
+    display: block;
+  }
+  .showcase .item {
+    min-width: auto;
+    display: block;
+  }
+  .showcase .item+.item {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 350px) {
+  .card h3 {
+    font-size: 32px;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
 }
