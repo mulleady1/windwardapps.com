@@ -125,9 +125,9 @@
   $(document).ready(function() {
     var nav = document.getElementById('nav');
     var banner = document.getElementById('banner');
-    var targetY = banner.clientHeight - nav.clientHeight;
 
     function setNavbarState() {
+      var targetY = banner.clientHeight - nav.clientHeight;
       if (window.pageYOffset > targetY && !nav.classList.contains('scrolled')) {
         nav.classList.add('scrolled');
       } else if (window.pageYOffset < targetY && nav.classList.contains('scrolled')) {
