@@ -1,33 +1,39 @@
-form > p {
+form>p {
   position: relative;
   width: 100%;
   padding-top: 20px;
   margin-bottom: 17px;
   cursor: text;
 }
-form > p label {
+
+form>p label {
   position: absolute;
   transition: all 150ms ease-in-out;
-  top: 31px;
+  top: 33px;
   left: 15px;
   color: #ccc;
   font-size: 14px;
 }
-form > p.focus label,
-form > p.has-value:not(.focus) label {
+
+form>p.focus label,
+form>p.has-value:not(.focus) label {
   top: 1px;
   left: 1px;
   font-size: 12px;
 }
-form > p.focus label {
+
+form>p.focus label {
   color: blue;
 }
-form > p.has-value:not(.focus) label {
+
+form>p.has-value:not(.focus) label {
   color: #888;
 }
-form > p:not(.focus) label {
+
+form>p:not(.focus) label {
   cursor: text;
 }
+
 textarea {
   min-height: 200px;
 }
