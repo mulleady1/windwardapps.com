@@ -9,7 +9,9 @@
 
     <title>Windward Apps</title>
 
-    <link href="//fonts.googleapis.com/css?family=Montserrat:200,300,400" rel="stylesheet">
+    <link rel="icon" type="image/svg" href="{% static 'app/images/logo-blue-small.svg' %}">
+
+    <link href="//fonts.googleapis.com/css?family=Montserrat:200,300,400|Gaegu|Hi+Melody|Indie+Flower" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'app/base.css' %}" />
 
     <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
@@ -17,7 +19,7 @@
   <body>
     <nav id="nav">
       <div class="container">
-        <div class="logo"><a href="/">WA</a></div>
+        <a href="/" class="logo"><img src="{% static 'app/images/logo-white.svg' %}" /><span>Windward Apps</span></a>
         <ul class="links">
           {% if user and user.is_authenticated %}
           <li><a href="/logout">Logout {{ user.username }}</a></li>

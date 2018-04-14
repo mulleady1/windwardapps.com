@@ -77,6 +77,20 @@ nav ul {
 nav a {
   color: #fff;
 }
+nav .logo {
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+  line-height: 34px;
+  font-family: 'Hi Melody', cursive;
+}
+nav .logo img {
+  width: 60px;
+  height: 60px;
+}
+nav .logo:hover, nav .logo:active {
+  text-decoration: none;
+}
 
 footer {
   background: #172E53;
