@@ -12,14 +12,16 @@
       margin-bottom: 10px;
     }
   </style>
-  <div class="container">
-    <form id="form" action="/login" method="post" data-ajax-form data-success-url="/">
-      <h2>Login</h2>
-      <div class="message"></div>
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Submit</button>
-    </form>
+  <div class="form-container">
+    <div class="container">
+      <form id="form" action="/login" method="post" data-ajax-form data-success-url="/">
+        <h2>Login</h2>
+        <div class="message"></div>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   </div>
 
   <script src="{% static 'app/form.js' %}"></script>

@@ -106,8 +106,8 @@ nav .logo {
   font-family: 'Hi Melody', cursive;
 }
 nav .logo img {
-  width: 60px;
-  height: 60px;
+  height: 40px;
+  margin-right: 10px;
 }
 nav .logo:hover, nav .logo:active {
   text-decoration: none;
@@ -127,6 +127,9 @@ footer {
   max-width: 1200px;
   margin: auto;
   padding: 20px;
+}
+.form-container {
+  background: #f9f9f9;
 }
 
 form button[type="submit"] {
