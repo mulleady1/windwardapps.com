@@ -2,7 +2,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
@@ -10,13 +11,19 @@ html, body {
   background: #172E53;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   padding: 0;
   font-weight: 300;
@@ -25,35 +32,47 @@ h1, h2, h3, h4, h5, h6 {
 a {
   text-decoration: none;
 }
-a:hover, a:active {
+
+a:hover,
+a:active {
   text-decoration: underline;
 }
 
-input, textarea, button {
+input,
+textarea,
+button {
+  -webkit-appearance: none;
   appearance: none;
   background: none;
-  border: 1px solid #172E5388;
+  background-color: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0px 0px 5px 1px #bbb2;
   border-radius: 3px;
-  padding: 10px 14px;
+  padding: 12px 14px;
   width: 100%;
   font-size: 14px;
   font-family: 'Montserrat', sans-serif;
 }
+
 button {
+  border: 1px solid #172E5388;
   border-color: #172E53;
   color: #172E53;
   background: none;
   cursor: pointer;
 }
+
 button:active {
   border-color: #172E53;
   background-color: #172E53;
   color: #fff;
   cursor: pointer;
 }
+
 button:focus {
   outline: none;
 }
+
 button:disabled {
   opacity: 0.5;
   cursor: default;
@@ -63,6 +82,7 @@ nav {
   background-color: #7a7adb;
   background-image: linear-gradient(315deg, #7a7adb 0%, #170e13 74%);
 }
+
 nav .container {
   display: flex;
   justify-content: space-between;
@@ -74,6 +94,7 @@ nav .container {
 nav ul {
   display: flex;
 }
+
 nav a {
   color: #fff;
 }
@@ -111,16 +132,19 @@ footer {
 form button[type="submit"] {
   margin-top: 15px;
 }
+
 form .message {
   margin: 20px 0;
   text-align: center;
   color: red;
 }
+
 form .field-message {
   color: red;
   margin: 5px 0 0 0;
   font-size: 85%;
 }
+
 form .success-message {
   margin: 20px 0;
 }
@@ -129,6 +153,7 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
+
 td {
   padding: 3px 10px;
 }

@@ -8,6 +8,7 @@ nav {
   transition: background 150ms ease-in-out;
   z-index: 1;
 }
+
 nav.scrolled {
   background-color: #7a7adbaa;
   background-image: linear-gradient(315deg, #7a7adbaa 0%, #170e13aa 74%);
@@ -27,13 +28,6 @@ nav.scrolled {
   margin: 150px 0;
 }
 
-@media (max-width: 550px) {
-  .box {
-    padding: 30px;
-    margin-top: 100px;
-  }
-}
-
 .box h2 {
   margin-top: 30px;
   font-size: 21px;
@@ -45,31 +39,9 @@ nav.scrolled {
   padding: 100px 0 80px 0;
 }
 
-@media (max-width: 760px) {
-  .cards {
-    padding: 50px 0 30px 0;
-    justify-content: center;
-  }
-  .card {
-    margin-right: 20px;
-  }
-}
-
-@media (max-width: 425px) {
-  .cards {
-    justify-content: initial;
-  }
-}
-
-@media (min-width: 1400px) {
-  .cards {
-    justify-content: space-between;
-  }
-}
-
 .card {
   background: #fff;
-  box-shadow: 0 22px 68px -9px rgba(0,0,0,.08);
+  box-shadow: 0 22px 68px -9px rgba(0, 0, 0, .08);
   padding: 50px;
   margin-bottom: 20px;
   margin-left: 20px;
@@ -97,48 +69,87 @@ nav.scrolled {
   text-align: center;
 }
 
-.about {
-  background: #f9f9f9;
+.section {
   padding: 100px 0;
+}
+
+.section:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.section:nth-child(odd) {
+  background: #fff;
 }
 
 .about h3,
 .how-we-work h3,
+.showcase h3,
 .why-us h3,
 .contact h3 {
   font-size: 30px;
   margin-bottom: 30px;
 }
 
-.why-us {
-  background: #fff;
-  padding: 100px 0;
-}
-
-.how-we-work {
-  background: #f9f9f9;
-  padding: 100px 0;
-}
-
-.contact {
-  background: #fff;
-  padding: 100px 0;
-}
-
 form {
   max-width: 600px;
 }
 
+.showcase .items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.showcase .item {
+  display: inline-block;
+  flex: 1 1 50%;
+  height: 300px;
+  min-width: 300px;
+  min-height: 150px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.showcase .overlay {
+  background-color: #0000;
+  transition: background-color 100ms ease;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 22px 68px -9px rgba(0, 0, 0, .08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showcase .overlay:hover {
+  background-color: #0006;
+}
+
+.showcase .overlay:hover .logo {
+  opacity: 1;
+}
+
+.showcase .logo {
+  width: 75px;
+  height: 75px;
+  opacity: 0;
+  transition: opacity 100ms ease;
+  background-size: contain;
+}
+
 .budgeter {
+  background-image: url(images/budgeter.png);
+}
+
+.budgeter-logo {
   background: #0000;
   font-family: Bitter;
   border: 1px solid #008840;
   border-radius: 50%;
-  width: 75px;
-  height: 75px;
   position: relative;
 }
-.budgeter .dollar {
+
+.budgeter-logo .dollar {
   position: absolute;
   font-size: 80px;
   color: #008840;
@@ -146,10 +157,95 @@ form {
   top: -12px;
   left: 8px;
 }
-.budgeter .b {
+
+.budgeter-logo .b {
   font-size: 75px;
   color: #008840;
   position: absolute;
   top: -6px;
   left: 16px;
+}
+
+.podsy {
+  background-image: url(images/podsy.png);
+}
+
+.podsy-logo {
+  background-image: url(images/podsy-logo.png);
+}
+
+.showcase .podsy-logo {
+  width: 90px;
+  height: 90px;
+}
+
+.showcase .your-logo {
+  width: auto;
+  height: auto;
+}
+
+@media (max-width: 550px) {
+  .box {
+    padding: 30px;
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: 760px) {
+  .cards {
+    padding: 50px 0 30px 0;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .card {
+    margin: 0;
+  }
+  .card+.card {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 425px) {
+  .cards {
+    justify-content: initial;
+  }
+  .card {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: none;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .cards {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 640px) {
+  .showcase .items {
+    display: block;
+  }
+  .showcase .item {
+    min-width: auto;
+    display: block;
+  }
+  .showcase .item+.item {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 350px) {
+  .card h3 {
+    font-size: 32px;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
 }

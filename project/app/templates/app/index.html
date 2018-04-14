@@ -1,135 +1,151 @@
-{% extends "app/base.html" %}
-{% load static %}
+{% extends "app/base.html" %} {% load static %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/index.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'app/form.css' %}" />
+<link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
 
-{% block content %}
-  <link rel="stylesheet" type="text/css" href="{% static 'app/index.css' %}" />
-  <link rel="stylesheet" type="text/css" href="{% static 'app/form.css' %}" />
-
-  <div id="banner" class="banner">
-    <div class="container">
-      <div class="box">
-        <h1>Windward Apps</h1>
-        <h2>Modern custom software done right</h2>
+<div id="banner" class="banner">
+  <div class="container">
+    <div class="box">
+      <h1>Windward Apps</h1>
+      <h2>Modern custom software done right</h2>
+    </div>
+  </div>
+</div>
+<div class="container cards">
+  <div class="card">
+    <h3>Engineering</h3>
+    <p>We build stunning applications using the latest technologies and engineering best practices</p>
+  </div>
+  <div class="card">
+    <h3>Project Management</h3>
+    <p>From requirements to deployment, you have accountability and visibility at all times</p>
+  </div>
+  <div class="card">
+    <h3>Process</h3>
+    <p>Following the Agile model, you see new features rapidly and consistently</p>
+  </div>
+</div>
+<div class="about section">
+  <div class="container">
+    <h3>About</h3>
+    <h4>
+      <b>We build web and mobile apps that solve business problems.</b>
+    </h4>
+    <p>
+      We help your organization run more efficiently, help generate revenue, attract new customers, and anything else that makes
+      your life easier. From workflow automation to e-commerce to startup platforms—and everything in between—we do it and
+      we can help.
+    </p>
+  </div>
+</div>
+<div class="showcase section">
+  <div class="container">
+    <h3>A Few Happy Clients</h3>
+    <div class="items">
+      <a class="item budgeter" href="https://getbudgeter.com" target="_blank">
+        <div class="overlay">
+          <div class="logo budgeter-logo">
+            <div class="dollar">$</div>
+            <div class="b">B</div>
+          </div>
+        </div>
+      </a>
+      <a class="item podsy" href="http://podsylisten.com" target="_blank">
+        <div class="overlay">
+          <div class="logo podsy-logo"></div>
+        </div>
+      </a>
+      <div class="item yours">
+        <div class="overlay">
+          <div class="logo your-logo">Yours!</div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="container cards">
-    <div class="card">
-      <h3>Engineering</h3>
-      <p>We build stunning applications using the latest technologies and engineering best practices</p>
-    </div>
-    <div class="card">
-      <h3>Project Management</h3>
-      <p>From requirements to deployment, you have accountability and visibility at all times</p>
-    </div>
-    <div class="card">
-      <h3>Process</h3>
-      <p>Following the Agile model, you see new features rapidly and consistently</p>
-    </div>
+</div>
+<div class="why-us section">
+  <div class="container">
+    <h3>Why Us</h3>
+    <p>
+      The main reason people choose us and are happy with our services is this: we make things fun and painless for you.
+    </p>
+    <p>
+      The process of brainstorming applications and extracting requirements can be challenging. We make it fun for you by taking
+      burden of the difficult parts off your shoulders.
+    </p>
+    <p>
+      The phase of fine tuning the end result can be tedious. We don't put that on you. Leave the boring stuff to us.
+    </p>
+    <p>
+      Deploying the app and getting it in the hands of your users is something we have down to a science. Don't sweat it.
+    </p>
+    <p>
+      Most of all, the software we build integrates seamlessly with your processses, and is delightful to use.
+    </p>
   </div>
-  <div class="about">
-    <div class="container">
-      <h3>About</h3>
-      <h4><b>We build web and mobile apps that solve business problems.</b></h4>
-      <p>
-        We help your organization run more efficiently, help generate revenue, attract new customers, and anything else
-        that makes your life easier. From workflow automation to e-commerce to startup platforms—and everything in
-        between—we do it and we can help.
-      </p>
-    </div>
+</div>
+<div class="how-we-work section">
+  <div class="container">
+    <h3>How We Work</h3>
+    <p>
+      By now you know we make things enjoyable for you. Our first step in working together is a meeting with you at your office,
+      at a coffee shop, or wherever else you feel most comfortable. You tell us about your business—your processes, your
+      pain points, your challenges—all the areas where we can create solutions to make your life easier.
+    </p>
+    <p>
+      From there, we'll come back to you after a few days with ideas and prototypes that may or may not blow your mind. You take
+      these ideas and give your feedback, and we'll come up with a scope of work.
+    </p>
+    <p>
+      Now the fun begins. We start building the app. We will be in touch with you as often as you like (in the daily to weekly
+      range). You will even be able to
+      <i>see and use app as it's being built</i>, thanks to our secure test environments.
+    </p>
+    <p>
+      You didn't even realize it because you were having so much fun, but your app is ready. Let's deploy it. Every scenario is
+      different, so let's put the app in the app stores, deploy it to a cloud instance, or put it in your server closet.
+      Whatever the case, we can figure out the logistics so you can sit back, relax, and wait for your app to come to you.
+    </p>
+    <p>
+      Enough reading. Let's talk.
+    </p>
   </div>
-  <div class="showcase">
-    <div class="container">
-      <h3>A Few Happy Clients</h3>
-      <a class="item" href="https://getbudgeter.com" target="_blank">
-        <div class="budgeter">
-          <div class="dollar"></div>
-          <div class="b"></div>
-        </div>
-      </a>
-    </div>
+</div>
+<div class="contact section">
+  <div class="container">
+    <h3>Contact</h3>
+    <form id="contact-form" action="/contact" method="post" data-ajax-form>
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Submit</button>
+    </form>
   </div>
-  <div class="why-us">
-    <div class="container">
-      <h3>Why Us</h3>
-      <p>
-        The main reason people choose us and are happy with our services is this: we make things fun and painless for you.
-      </p>
-      <p>
-        The process of brainstorming applications and extracting requirements can be challenging. We make it fun for you
-        by taking burden of the difficult parts off your shoulders.
-      </p>
-      <p>
-        The phase of fine tuning the end result can be tedious. We don't put that on you. Leave the boring stuff to us.
-      </p>
-      <p>
-        Deploying the app and getting it in the hands of your users is something we have down to a science. Don't sweat it.
-      </p>
-      <p>
-        Most of all, the software we build integrates seamlessly with your processses, and is delightful to use.
-      </p>
-    </div>
-  </div>
-  <div class="how-we-work">
-    <div class="container">
-      <h3>How We Work</h3>
-      <p>
-        By now you know we make things enjoyable for you. Our first step in working together is a meeting with you at your office, at a coffee
-        shop, or wherever else you feel most comfortable. You tell us about your business—your processes, your pain points,
-        your challenges—all the areas where we can create solutions to make your life easier.
-      </p>
-      <p>
-        From there, we'll come back to you after a few days with ideas and prototypes that may or may not blow your mind. You
-        take these ideas and give your feedback, and we'll come up with a scope of work.
-      </p>
-      <p>
-        Now the fun begins. We start building the app. We will be in touch with you as often as you like (in the daily to weekly range).
-        You will even be able to <i>see and use app as it's being built</i>, thanks to our secure test environments.
-      </p>
-      <p>
-        You didn't even realize it because you were having so much fun, but your app is ready. Let's deploy it. Every scenario is
-        different, so let's put the app in the app stores, deploy it to a cloud instance, or put it in your server closet. Whatever
-        the case, we can figure out the logistics so you can sit back, relax, and wait for your app to come to you.
-      </p>
-      <p>
-        Enough reading. Let's talk.
-      </p>
-    </div>
-  </div>
-  <div class="contact">
-    <div class="container">
-      <h3>Contact</h3>
-      <form id="contact-form" action="/contact" method="post" data-ajax-form>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  </div>
+</div>
 
-  <script>
-    $(document).ready(function() {
-      setTimeout(function() {
-        var scrollNode = document.documentElement;
-        var nav = document.getElementById('nav');
-        var banner = document.getElementById('banner');
-        var targetY = banner.clientHeight - nav.clientHeight;
-        window.addEventListener('scroll', function(e) {
-          if (scrollNode.scrollTop > targetY && !nav.classList.contains('scrolled')) {
-            nav.classList.add('scrolled');
-          } else if (scrollNode.scrollTop < targetY && nav.classList.contains('scrolled')) {
-            nav.classList.remove('scrolled');
-          }
-        });
-      }, 250);
+<script>
+  $(document).ready(function() {
+    var nav = document.getElementById('nav');
+    var banner = document.getElementById('banner');
 
-      var el = $('#contact-form')[0];
-      el._onSuccess = function() {
-        $(el).html('<div class="success-message">Thanks! We\'ll be in touch soon.</div>');
+    function setNavbarState() {
+      var targetY = banner.clientHeight - nav.clientHeight;
+      if (window.pageYOffset > targetY && !nav.classList.contains('scrolled')) {
+        nav.classList.add('scrolled');
+      } else if (window.pageYOffset < targetY && nav.classList.contains('scrolled')) {
+        nav.classList.remove('scrolled');
       }
-    });
-  </script>
+    }
 
-  <script src="{% static 'app/form.js' %}"></script>
-  <script src="{% static 'app/ajaxForm.js' %}"></script>
+    setNavbarState();
+    window.addEventListener('scroll', setNavbarState);
+
+    var el = $('#contact-form')[0];
+    el._onSuccess = function() {
+      $(el).html('<div class="success-message">Thanks! We\'ll be in touch soon.</div>');
+    }
+  });
+
+</script>
+
+<script src="{% static 'app/form.js' %}"></script>
+<script src="{% static 'app/ajaxForm.js' %}"></script>
 {% endblock %}
