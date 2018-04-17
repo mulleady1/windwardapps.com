@@ -57,7 +57,7 @@
       </a>
       <div class="item yours">
         <div class="overlay">
-          <div class="logo your-logo">Yours!</div>
+          <div class="logo your-logo">You!</div>
         </div>
       </div>
     </div>
@@ -88,9 +88,9 @@
   <div class="container">
     <h3>How We Work</h3>
     <p>
-      By now you know we make things enjoyable for you. Our first step in working together is a meeting with you at your office,
+      Our first step in working together is a meeting with you at your office,
       at a coffee shop, or wherever else you feel most comfortable. You tell us about your business—your processes, your
-      pain points, your challenges—all the areas where we can create solutions to make your life easier.
+      pain points, your challenges—all the areas where we can create solutions that bring improvements to your business.
     </p>
     <p>
       From there, we'll come back to you after a few days with ideas and prototypes that may or may not blow your mind. You take
@@ -99,7 +99,7 @@
     <p>
       Now the fun begins. We start building the app. We will be in touch with you as often as you like (in the daily to weekly
       range). You will even be able to
-      <i>see and use app as it's being built</i>, thanks to our secure test environments.
+      <i>see and use app as it's being built</i>, thanks to our cutting edge tools and secure test environments.
     </p>
     <p>
       You didn't even realize it because you were having so much fun, but your app is ready. Let's deploy it. Every scenario is
@@ -135,7 +135,10 @@
       }
     }
 
-    setNavbarState();
+    setTimeout(function() {
+      setNavbarState();
+    }, 200);
+
     window.addEventListener('scroll', setNavbarState);
 
     var el = $('#contact-form')[0];
