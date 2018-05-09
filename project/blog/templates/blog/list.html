@@ -1,0 +1,10 @@
+{% extends 'app/base.html' %} {% block content %}
+<h1>Blog</h1>
+<ul>
+  {% for entry in object_list %}
+  <li>{{ entry.pub_date|date }} - {{ entry.headline }}</li>
+  {% empty %}
+  <li>No entries yet.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

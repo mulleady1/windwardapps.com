@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'shared.apps.SharedConfig',
     'app.apps.AppConfig',
+    'blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -120,7 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/var/www/windwardapps.com/static/'
+# STATIC_ROOT = '/var/www/windwardapps.com/static/'
 
 CONTACT_EMAIL = os.environ.get('WA_CONTACT_EMAIL', '')
 EMAIL_API_URL = os.environ.get('WA_EMAIL_API_URL', '')
@@ -135,7 +136,8 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': '/var/log/windwardapps.com/django-debug.log',
+            'filename': os.path.join(BASE_DIR, 'debug.log'),
+            # 'filename': '/var/log/windwardapps.com/django-debug.log',
         },
     },
     'loggers': {
