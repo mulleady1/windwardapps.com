@@ -2,51 +2,66 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Windward Apps</title>
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <link rel="icon" type="image/svg" href="{% static 'app/images/logo-color-196x195.png' %}">
-    <link rel="apple-touch-icon" href="{% static 'app/images/logo-color-196x195.png' %}">
-    <link rel="apple-touch-startup-image" href="{% static 'app/images/logo-color-196x195.png' %}">
+  <title>Windward Apps</title>
 
-    <link href="//fonts.googleapis.com/css?family=Montserrat:200,300,400|Gaegu|Hi+Melody|Indie+Flower" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'app/base.css' %}" />
+  <link rel="icon" type="image/svg" href="{% static 'app/images/logo-color-196x195.png' %}">
+  <link rel="apple-touch-icon" href="{% static 'app/images/logo-color-196x195.png' %}">
+  <link rel="apple-touch-startup-image" href="{% static 'app/images/logo-color-196x195.png' %}">
 
-    <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-  </head>
-  <body>
-    <nav id="nav">
-      <div class="container">
-        <a href="/" class="logo"><img src="{% static 'app/images/logo-white-51x93.png' %}" /><span>Windward Apps</span></a>
-        <ul class="links">
-          {% if user and user.is_authenticated %}
-          <li><a href="/logout">Logout {{ user.username }}</a></li>
-          {% else %}
-          <li><a href="/login">Login</a></li>
-          {% endif %}
-        </ul>
-      </div>
-    </nav>
+  <link href="//fonts.googleapis.com/css?family=Montserrat:200,300,400|Gaegu|Hi+Melody|Indie+Flower" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'app/base.css' %}" />
 
-    <div id="main">
-      {% block content %}{% endblock %}
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+</head>
+
+<body>
+  <nav id="nav">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="{% static 'app/images/logo-white-51x93.png' %}" />
+        <span>Windward Apps</span>
+      </a>
+      <ul class="links">
+        <li>
+          <a href="/blog">Blog</a>
+        </li>
+        {% if user and user.is_authenticated %}
+        <li>
+          <a href="/logout">Logout {{ user.username }}</a>
+        </li>
+        {% else %}
+        <li>
+          <a href="/login">Login</a>
+        </li>
+        {% endif %}
+      </ul>
     </div>
+  </nav>
 
-    <footer>
-      <div class="container">
-        &copy; <span id="year">2018</span> Windward Apps
-      </div>
-    </footer>
+  <div id="main">
+    {% block content %}{% endblock %}
+  </div>
 
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-  </body>
+  <footer>
+    <div class="container">
+      &copy;
+      <span id="year">2018</span> Windward Apps
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+  </script>
+</body>
+
 </html>

@@ -1,10 +1,23 @@
-{% extends 'app/base.html' %} {% block content %}
-<h1>Blog</h1>
-<ul>
-  {% for entry in object_list %}
-  <li>{{ entry.pub_date|date }} - {{ entry.headline }}</li>
-  {% empty %}
-  <li>No entries yet.</li>
-  {% endfor %}
-</ul>
+{% extends 'app/base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/list.css' %}" />
+<div class="container">
+  <h1>Blog</h1>
+  <ul class="blog-entries">
+    {% for entry in object_list %}
+    <li>
+      <a href="{{ entry.slug }}">
+        <div class="image">
+          <img src="{{ entry.image_url }}" />
+        </div>
+        <div class="info">
+          <div class="headline">{{ entry.headline }}</div>
+          <div class="date">{{ entry.pub_date|date }}</div>
+        </div>
+      </a>
+    </li>
+    {% empty %}
+    <li>No entries yet.</li>
+    {% endfor %}
+  </ul>
+</div>
 {% endblock %}

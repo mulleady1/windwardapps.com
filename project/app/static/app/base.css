@@ -113,6 +113,10 @@ nav .logo:hover, nav .logo:active {
   text-decoration: none;
 }
 
+nav .links li + li {
+  margin-left: 20px;
+}
+
 footer {
   background: #172E53;
   color: #eee;
