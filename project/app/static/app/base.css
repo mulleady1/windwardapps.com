@@ -114,7 +114,7 @@ nav .logo:hover, nav .logo:active {
 }
 
 nav .links li + li {
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
 footer {
@@ -163,4 +163,20 @@ table {
 
 td {
   padding: 3px 10px;
+}
+
+.flex-row {
+  display: flex;
+}
+.align-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+
+@media (max-width: 400px) {
+  .logo span {
+    display: none;
+  }
 }

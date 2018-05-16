@@ -1,0 +1,20 @@
+{% extends 'app/base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/detail.css' %}" />
+<div class="container">
+  <article>
+    <header>
+      <h1>{{ object.title }}</h1>
+      {% if object.headline %}
+      <h2>{{ object.headline }}</h2>
+      {% endif %}
+      <p class="date">{{ object.pub_date | date:'M j, Y' }}</p>
+      <div class="flex-row justify-center img-wrapper">
+        <img src="{% static 'blog/images/' %}{{ object.image_url }}" />
+      </div>
+    </header>
+    <section>
+      {{ object.content | safe }}
+    </section>
+  </article>
+</div>
+{% endblock %}

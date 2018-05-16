@@ -1,5 +1,8 @@
+#main {
+  background: #f8f8f8;
+}
 h1 {
-  margin-bottom: 20px;
+  margin: 40px 0;
 }
 .blog-entries {
   display: flex;
