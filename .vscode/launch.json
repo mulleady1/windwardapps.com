@@ -12,17 +12,9 @@
       "pythonPath": "${config:python.pythonPath}",
       "program": "${workspaceFolder}/project/manage.py",
       "cwd": "${workspaceFolder}",
-      "args": [
-        "runserver",
-        "--noreload",
-        "--nothreading"
-      ],
-      "env": {},
-      "envFile": "${workspaceFolder}/.env",
-      "debugOptions": [
-        "RedirectOutput",
-        "DjangoDebugging"
-      ]
+      "args": ["runserver", "--noreload", "--nothreading"],
+      "envFile": "${workspaceFolder}/.env.dev",
+      "debugOptions": ["RedirectOutput", "Django"]
     }
   ]
 }

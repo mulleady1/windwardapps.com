@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '4x@g!w)l*h#h5b-a@p4w5&ai^+u3(xg2s)3)h-j&6i2ixdqu6s'
+SECRET_KEY = os.environ.get('WA_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('WA_DEBUG', '') == 'True'
+DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -121,13 +121,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = '/var/www/windwardapps.com/static/'
 
 CONTACT_EMAIL = os.environ.get('WA_CONTACT_EMAIL', '')
 EMAIL_API_URL = os.environ.get('WA_EMAIL_API_URL', '')
 EMAIL_API_KEY = os.environ.get('WA_EMAIL_API_KEY', '')
-
-ALLOWED_HOSTS = ['*']
 
 LOGGING = {
     'version': 1,
@@ -137,7 +134,6 @@ LOGGING = {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'filename': os.path.join(BASE_DIR, 'debug.log'),
-            # 'filename': '/var/log/windwardapps.com/django-debug.log',
         },
     },
     'loggers': {
