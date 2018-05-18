@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  background: #172E53;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+input,
+textarea,
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+  background-color: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0px 0px 5px 1px #bbb2;
+  border-radius: 3px;
+  padding: 12px 14px;
+  width: 100%;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+button {
+  border: 1px solid #172E5388;
+  border-color: #172E53;
+  color: #172E53;
+  background: none;
+  cursor: pointer;
+}
+
+button:active {
+  border-color: #172E53;
+  background-color: #172E53;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+nav {
+  background-color: #7a7adb;
+  background-image: linear-gradient(315deg, #7a7adb 0%, #170e13 74%);
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 20px;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav a {
+  color: #fff;
+}
+nav .logo {
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+  line-height: 34px;
+  font-family: 'Hi Melody', cursive;
+}
+nav .logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+nav .logo:hover, nav .logo:active {
+  text-decoration: none;
+}
+
+nav .links li + li {
+  margin-left: 40px;
+}
+
+footer {
+  background: #172E53;
+  color: #eee;
+  padding: 100px 0;
+}
+
+#main {
+  background: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+.form-container {
+  background: #f9f9f9;
+}
+
+form button[type="submit"] {
+  margin-top: 15px;
+}
+
+form .message {
+  margin: 20px 0;
+  text-align: center;
+  color: red;
+}
+
+form .field-message {
+  color: red;
+  margin: 5px 0 0 0;
+  font-size: 85%;
+}
+
+form .success-message {
+  margin: 20px 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  padding: 3px 10px;
+}
+
+@media (max-width: 400px) {
+  .logo span {
+    display: none;
+  }
+}

@@ -18,13 +18,14 @@
   <link rel="apple-touch-startup-image" href="{% static 'app/images/logo-color-196x195.png' %}">
 
   <link href="//fonts.googleapis.com/css?family=Montserrat:200,300,400|Gaegu|Hi+Melody|Indie+Flower" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{% static 'app/base.css' %}" />
-
   <script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 </head>
 
 <body>
-  <nav id="nav">
+  {% block nav %}
+  <nav id="nav" class="nav">
     <div class="container">
       <a href="/" class="logo">
         <img src="{% static 'app/images/logo-white-51x93.png' %}" />
@@ -46,22 +47,20 @@
       </ul>
     </div>
   </nav>
+  {% endblock nav %}
 
   <div id="main">
     {% block content %}{% endblock %}
   </div>
 
+  {% block footer %}
   <footer>
     <div class="container">
       &copy;
       <span id="year">2018</span> Windward Apps
     </div>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-  </script>
+  {% endblock footer %}
 </body>
 
 </html>

@@ -6,7 +6,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 300;
   background: #172E53;
 }
@@ -48,10 +48,9 @@ button {
   border: 1px solid #eee;
   box-shadow: 0px 0px 5px 1px #bbb2;
   border-radius: 3px;
-  padding: 12px 14px;
+  padding: 14px 16px;
   width: 100%;
-  font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
 }
 
 button {
@@ -78,12 +77,12 @@ button:disabled {
   cursor: default;
 }
 
-nav {
+.nav {
   background-color: #7a7adb;
   background-image: linear-gradient(315deg, #7a7adb 0%, #170e13 74%);
 }
 
-nav .container {
+.nav .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -91,29 +90,29 @@ nav .container {
   padding: 0 20px;
 }
 
-nav ul {
+.nav ul {
   display: flex;
 }
 
-nav a {
+.nav a {
   color: #fff;
 }
-nav .logo {
+.nav .logo {
   display: flex;
   align-items: center;
   font-size: 32px;
   line-height: 34px;
   font-family: 'Hi Melody', cursive;
 }
-nav .logo img {
+.nav .logo img {
   height: 40px;
   margin-right: 10px;
 }
-nav .logo:hover, nav .logo:active {
+.nav .logo:hover, .nav .logo:active {
   text-decoration: none;
 }
 
-nav .links li + li {
+.nav .links li + li {
   margin-left: 40px;
 }
 
@@ -133,7 +132,7 @@ footer {
   padding: 20px;
 }
 .form-container {
-  background: #f9f9f9;
+  text-align: left;
 }
 
 form button[type="submit"] {
@@ -163,16 +162,6 @@ table {
 
 td {
   padding: 3px 10px;
-}
-
-.flex-row {
-  display: flex;
-}
-.align-center {
-  align-items: center;
-}
-.justify-center {
-  justify-content: center;
 }
 
 @media (max-width: 400px) {

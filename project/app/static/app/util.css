@@ -1,0 +1,15 @@
+.flex-row {
+  display: flex;
+}
+.align-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.block {
+  display: block;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+}

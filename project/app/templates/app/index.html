@@ -1,154 +1,276 @@
-{% extends "app/base.html" %} {% load static %} {% block content %}
+{% extends "app/base.html" %} {% load static %} {% block nav %}{% endblock nav %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/util.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'app/index.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'app/form.css' %}" />
-<link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
-
-<div id="banner" class="banner">
-  <div class="container">
-    <div class="box">
-      <h1>Windward Apps</h1>
-      <h2>Modern custom software done right</h2>
-    </div>
-  </div>
-</div>
-<div class="container cards">
-  <div class="card">
-    <h3>Engineering</h3>
-    <p>We build stunning applications using the latest technologies and engineering best practices</p>
-  </div>
-  <div class="card">
-    <h3>Project Management</h3>
-    <p>From requirements to deployment, you have accountability and visibility at all times</p>
-  </div>
-  <div class="card">
-    <h3>Process</h3>
-    <p>Following the Agile model, you see new features rapidly and consistently</p>
-  </div>
-</div>
-<div class="about section">
-  <div class="container">
-    <h3>About</h3>
-    <h4>
-      <b>We build web and mobile apps that solve business problems.</b>
-    </h4>
-    <p>
-      We help your organization run more efficiently, help generate revenue, attract new customers, and anything else that makes
-      your life easier. From workflow automation to e-commerce to startup platforms—and everything in between—we do it and
-      we can help.
-    </p>
-  </div>
-</div>
-<div class="showcase section">
-  <div class="container">
-    <h3>A Few Happy Clients</h3>
-    <div class="items">
-      <a class="item budgeter" href="https://getbudgeter.com" target="_blank">
-        <div class="overlay">
-          <div class="logo budgeter-logo">
-            <div class="dollar">$</div>
-            <div class="b">B</div>
+<div class="font-modern">
+  <div class="black-flat">
+    <header class="header">
+      <div class="container-lrg">
+        <div class="flex col-12 spread">
+          <a class="logo primary-color logo flex-row">
+            <img src="{% static 'app/images/logo-color-100x177.png' %}" />
+            <span>Windward Apps</span>
+          </a>
+          <div class="links">
+            <a href="/news" class="nav-link secondary-color mr0">News</a>
+            <a href="javascript:void(0)" class="scroll-link nav-link secondary-color mr0">Contact</a>
           </div>
         </div>
-      </a>
-      <a class="item podsy" href="http://podsylisten.com" target="_blank">
-        <div class="overlay">
-          <div class="logo podsy-logo"></div>
+      </div>
+    </header>
+    <section class="section">
+      <div class="container mb40">
+        <div class="col-12 text-center">
+          <h1 class="heading-lrg primary-color">Modern custom software done right</h1>
+          <h2 class="subheading secondary-color mt20">Next generation web, cloud, and mobile apps. Built with Aloha.</h2>
+          <div class="mt40">
+            <a href="javascript:void(0)" target="_blank" class="scroll-link button mobile-text-center mt10 mobile-text-center accent-bg primary-color">
+              <span> Get A Quote </span>
+            </a>
+          </div>
         </div>
-      </a>
-      <div class="item yours">
-        <div class="overlay">
-          <div class="logo your-logo">You!</div>
+      </div>
+      <div class="container-lrg">
+        <div class="col-12">
+          <div class="browserphone">
+            <div class="browserphone-browser ">
+              <div class="mask">
+                <img src="{% static 'app/images/browser.png' %}" alt="Screenshot of App in Browser" class="mask-img">
+              </div>
+            </div>
+            <div class="browserphone-iphone">
+              <div class="mask">
+                <img src="{% static 'app/images/mobile.png' %}" alt="Screenshot of iPhone App" class="mask-img">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <section id="feature-1" class="section black-white" sitemeta="[object Object]" activepage="Landing">
+    <div class="container-lrg flex">
+      <div class="col-4 text-center flex flex-column center-horizontal">
+        <i class="icon mobile-center-icon secondary-bg">
+          <svg class="svg-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
+            <path d="M25 3v4H0V3a1 1 0 0 1 1-1h5V.5a.5.5 0 0 1 1 0V2h11V.5a.5.5 0 0 1 1 0V2h5a1 1 0 0 1 1 1zM0 8h25v15a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm8.18 7.384l3 2.5a.5.5 0 0 0 .674-.03l5-5a.5.5 0 0 0-.707-.707l-4.677 4.677-2.65-2.208a.5.5 0 1 0-.64.768z"></path>
+          </svg>
+        </i>
+        <h3 class="bold primary-color">Schedule &amp; Budget Friendly</h3>
+        <p class="paragraph secondary-color">Respecting your constraints is our top priority. We leverage open source technologies to build better apps, faster,
+          and with less overhead to meet your requirements.</p>
+      </div>
+      <div class="col-4 text-center flex flex-column center-horizontal">
+        <i class="icon mobile-center-icon secondary-bg">
+          <svg class="svg-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
+            <path d="M8 7a5 5 0 1 1 5 5 5.006 5.006 0 0 1-5-5zm5 6a8 8 0 0 0-8 8v.5a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5V21a8 8 0 0 0-8-8z"></path>
+          </svg>
+        </i>
+        <h3 class="bold primary-color">Unparalleled UX</h3>
+        <p class="paragraph secondary-color">We put users first when we design and architect our apps. The result is an elegant and intuitive user experience,
+          every time. </p>
+      </div>
+      <div class="col-4 text-center flex flex-column center-horizontal">
+        <i class="icon mobile-center-icon secondary-bg">
+          <svg class="svg-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
+            <path d="M20 22.494v1a.5.5 0 0 1-1 0v-1a.5.5 0 1 1 1 0zm-14.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 1 0v-1a.5.5 0 0 0-.5-.5zm7 1a10.924 10.924 0 0 1-2.494-.391l-.27 1.76a.528.528 0 0 0 .097.454.498.498 0 0 0 .387.183h4.56a.5.5 0 0 0 .49-.598l-.275-1.8a10.928 10.928 0 0 1-2.495.392zm9.06-7.44L18 11.995v9h2.5a1.5 1.5 0 0 0 1.5-1.5v-2.879a1.5 1.5 0 0 0-.44-1.06zM17 5.995v15a18.472 18.472 0 0 1-4 .974v-7.474a.5.5 0 0 0-1 0v7.474a18.47 18.47 0 0 1-4-.974v-15C8 3.67 11.553.244 12.5 0c.947.244 4.5 3.67 4.5 5.994zm-2.168 1.127A4.374 4.374 0 0 0 12.5 5.994a4.113 4.113 0 0 0-2.343 1.136.5.5 0 0 0 .686.729 3.213 3.213 0 0 1 1.657-.865 3.417 3.417 0 0 1 1.668.874.5.5 0 0 0 .664-.748zM3 16.614v2.88a1.5 1.5 0 0 0 1.5 1.5H7v-9l-3.56 3.56a1.5 1.5 0 0 0-.44 1.06z"></path>
+          </svg>
+        </i>
+        <h3 class="bold primary-color">Complexity + Quality</h3>
+        <p class="paragraph secondary-color">We use modern engineering practices
+          <a href="https://en.wikipedia.org/wiki/Continuous_integration" target="_blank">(CI</a>,
+          <a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank">TDD</a>,
+          <a href="https://en.wikipedia.org/wiki/Agile_software_development" target="_blank">Agile)</a>
+          to build robust applications at top-tier quality.</p>
+      </div>
+    </div>
+  </section>
+  <section id="testimonial-2" class="section black-white" sitemeta="[object Object]" activepage="Landing">
+    <div class="container-lrg">
+      <div class="slideshow text-center">
+        <input type="radio" name="ss2" id="ss2-item-0" checked="checked" class="slideshow-bullet">
+        <div class="slideshow-item">
+          <div class="slideshow-item-content">
+            <blockquote class="container col-12">Windward Apps built us a web platform that automated several areas of our internal workflows, saving us countless
+              person-hours per week</blockquote>
+            <div class="mt20">
+              <p class="span secondary-color mb10">Daniel Everson</p>
+              <span class="span secondary-color">CEO, UnSocially</span>
+            </div>
+          </div>
+          <label for="ss2-item-1" class="slideshow-nav slideshow-nav-previous accent-bg"></label>
+          <label for="ss2-item-1" class="slideshow-nav slideshow-nav-next accent-bg"></label>
+        </div>
+        <input type="radio" name="ss2" id="ss2-item-1" class="slideshow-bullet">
+        <div class="slideshow-item">
+          <div class="slideshow-item-content">
+            <blockquote class="container col-12">Thank you for creating MarkupAndChat! Immensely helpful for design reviews!</blockquote>
+            <div class="mt20">
+              <p class="span secondary-color mb10">Happy MarkupAndChat User</p>
+            </div>
+          </div>
+          <label for="ss2-item-0" class="slideshow-nav slideshow-nav-previous accent-bg"></label>
+          <label for="ss2-item-0" class="slideshow-nav slideshow-nav-next accent-bg"></label>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+  <section id="checklist-3" class="section black-white" sitemeta="[object Object]" activepage="Landing">
+    <div class="container text-center mb75">
+      <div class="col-12">
+        <h3 class="heading primary-color">Technologies we use</h3>
+        <p class="subheading secondary-color mt20">Did we mention we love open source?</p>
+      </div>
+    </div>
+    <div class="container flex">
+      <ul class="checklist col-12">
+        <li class="checklist-item flex center-horizontal spread pad10">
+          <p class="paragraph primary-color mr20">Python</p>
+          <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            class="noshrink svg-fill">
+            <g transform="translate(4.000000, 5.000000)">
+              <path d="M5.24961475,8.39956394 L2.16512063,5.35475362 C1.74038521,4.93548271 1.05017933,4.9352057 0.624646383,5.35526395 C0.199019838,5.77541456 0.198881924,6.45614266 0.624129379,6.8759191 L4.35212111,10.555948 C4.38658274,10.6034965 4.42544251,10.6488955 4.46870038,10.6915969 C4.70907746,10.9288814 5.03375662,11.0320952 5.3475228,11.0013023 C5.59592563,10.9812599 5.83876209,10.8774981 6.02880771,10.6898975 C6.06831079,10.6509027 6.10414872,10.6096632 6.13632157,10.5665961 L13.9850992,2.81879759 C14.4107939,2.39857976 14.410861,1.71746456 13.985328,1.29740632 C13.5597015,0.8772557 12.8697673,0.877449143 12.444108,1.29763217 L5.24961475,8.39956394 Z"></path>
+            </g>
+          </svg>
+        </li>
+        <li class="checklist-item flex center-horizontal spread pad10">
+          <p class="paragraph primary-color mr20">Javascript</p>
+          <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            class="noshrink svg-fill">
+            <g transform="translate(4.000000, 5.000000)">
+              <path d="M5.24961475,8.39956394 L2.16512063,5.35475362 C1.74038521,4.93548271 1.05017933,4.9352057 0.624646383,5.35526395 C0.199019838,5.77541456 0.198881924,6.45614266 0.624129379,6.8759191 L4.35212111,10.555948 C4.38658274,10.6034965 4.42544251,10.6488955 4.46870038,10.6915969 C4.70907746,10.9288814 5.03375662,11.0320952 5.3475228,11.0013023 C5.59592563,10.9812599 5.83876209,10.8774981 6.02880771,10.6898975 C6.06831079,10.6509027 6.10414872,10.6096632 6.13632157,10.5665961 L13.9850992,2.81879759 C14.4107939,2.39857976 14.410861,1.71746456 13.985328,1.29740632 C13.5597015,0.8772557 12.8697673,0.877449143 12.444108,1.29763217 L5.24961475,8.39956394 Z"></path>
+            </g>
+          </svg>
+        </li>
+        <li class="checklist-item flex center-horizontal spread pad10">
+          <p class="paragraph primary-color mr20">React</p>
+          <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            class="noshrink svg-fill">
+            <g transform="translate(4.000000, 5.000000)">
+              <path d="M5.24961475,8.39956394 L2.16512063,5.35475362 C1.74038521,4.93548271 1.05017933,4.9352057 0.624646383,5.35526395 C0.199019838,5.77541456 0.198881924,6.45614266 0.624129379,6.8759191 L4.35212111,10.555948 C4.38658274,10.6034965 4.42544251,10.6488955 4.46870038,10.6915969 C4.70907746,10.9288814 5.03375662,11.0320952 5.3475228,11.0013023 C5.59592563,10.9812599 5.83876209,10.8774981 6.02880771,10.6898975 C6.06831079,10.6509027 6.10414872,10.6096632 6.13632157,10.5665961 L13.9850992,2.81879759 C14.4107939,2.39857976 14.410861,1.71746456 13.985328,1.29740632 C13.5597015,0.8772557 12.8697673,0.877449143 12.444108,1.29763217 L5.24961475,8.39956394 Z"></path>
+            </g>
+          </svg>
+        </li>
+        <li class="checklist-item flex center-horizontal spread pad10">
+          <p class="paragraph primary-color mr20">Node.js</p>
+          <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            class="noshrink svg-fill">
+            <g transform="translate(4.000000, 5.000000)">
+              <path d="M5.24961475,8.39956394 L2.16512063,5.35475362 C1.74038521,4.93548271 1.05017933,4.9352057 0.624646383,5.35526395 C0.199019838,5.77541456 0.198881924,6.45614266 0.624129379,6.8759191 L4.35212111,10.555948 C4.38658274,10.6034965 4.42544251,10.6488955 4.46870038,10.6915969 C4.70907746,10.9288814 5.03375662,11.0320952 5.3475228,11.0013023 C5.59592563,10.9812599 5.83876209,10.8774981 6.02880771,10.6898975 C6.06831079,10.6509027 6.10414872,10.6096632 6.13632157,10.5665961 L13.9850992,2.81879759 C14.4107939,2.39857976 14.410861,1.71746456 13.985328,1.29740632 C13.5597015,0.8772557 12.8697673,0.877449143 12.444108,1.29763217 L5.24961475,8.39956394 Z"></path>
+            </g>
+          </svg>
+        </li>
+        <li class="checklist-item flex center-horizontal spread pad10">
+          <p class="paragraph primary-color mr20">.NET Core</p>
+          <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            class="noshrink svg-fill">
+            <g transform="translate(4.000000, 5.000000)">
+              <path d="M5.24961475,8.39956394 L2.16512063,5.35475362 C1.74038521,4.93548271 1.05017933,4.9352057 0.624646383,5.35526395 C0.199019838,5.77541456 0.198881924,6.45614266 0.624129379,6.8759191 L4.35212111,10.555948 C4.38658274,10.6034965 4.42544251,10.6488955 4.46870038,10.6915969 C4.70907746,10.9288814 5.03375662,11.0320952 5.3475228,11.0013023 C5.59592563,10.9812599 5.83876209,10.8774981 6.02880771,10.6898975 C6.06831079,10.6509027 6.10414872,10.6096632 6.13632157,10.5665961 L13.9850992,2.81879759 C14.4107939,2.39857976 14.410861,1.71746456 13.985328,1.29740632 C13.5597015,0.8772557 12.8697673,0.877449143 12.444108,1.29763217 L5.24961475,8.39956394 Z"></path>
+            </g>
+          </svg>
+        </li>
+        <li class="checklist-item flex center-horizontal spread pad10">
+          <p class="paragraph primary-color mr20">iOS</p>
+          <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            class="noshrink svg-fill">
+            <g transform="translate(4.000000, 5.000000)">
+              <path d="M5.24961475,8.39956394 L2.16512063,5.35475362 C1.74038521,4.93548271 1.05017933,4.9352057 0.624646383,5.35526395 C0.199019838,5.77541456 0.198881924,6.45614266 0.624129379,6.8759191 L4.35212111,10.555948 C4.38658274,10.6034965 4.42544251,10.6488955 4.46870038,10.6915969 C4.70907746,10.9288814 5.03375662,11.0320952 5.3475228,11.0013023 C5.59592563,10.9812599 5.83876209,10.8774981 6.02880771,10.6898975 C6.06831079,10.6509027 6.10414872,10.6096632 6.13632157,10.5665961 L13.9850992,2.81879759 C14.4107939,2.39857976 14.410861,1.71746456 13.985328,1.29740632 C13.5597015,0.8772557 12.8697673,0.877449143 12.444108,1.29763217 L5.24961475,8.39956394 Z"></path>
+            </g>
+          </svg>
+        </li>
+        <li class="checklist-item flex center-horizontal spread pad10">
+          <p class="paragraph primary-color mr20">Android</p>
+          <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            class="noshrink svg-fill">
+            <g transform="translate(4.000000, 5.000000)">
+              <path d="M5.24961475,8.39956394 L2.16512063,5.35475362 C1.74038521,4.93548271 1.05017933,4.9352057 0.624646383,5.35526395 C0.199019838,5.77541456 0.198881924,6.45614266 0.624129379,6.8759191 L4.35212111,10.555948 C4.38658274,10.6034965 4.42544251,10.6488955 4.46870038,10.6915969 C4.70907746,10.9288814 5.03375662,11.0320952 5.3475228,11.0013023 C5.59592563,10.9812599 5.83876209,10.8774981 6.02880771,10.6898975 C6.06831079,10.6509027 6.10414872,10.6096632 6.13632157,10.5665961 L13.9850992,2.81879759 C14.4107939,2.39857976 14.410861,1.71746456 13.985328,1.29740632 C13.5597015,0.8772557 12.8697673,0.877449143 12.444108,1.29763217 L5.24961475,8.39956394 Z"></path>
+            </g>
+          </svg>
+        </li>
+        <li class="checklist-item flex center-horizontal spread pad10">
+          <p class="paragraph primary-color mr20">MySQL</p>
+          <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            class="noshrink svg-fill">
+            <g transform="translate(4.000000, 5.000000)">
+              <path d="M5.24961475,8.39956394 L2.16512063,5.35475362 C1.74038521,4.93548271 1.05017933,4.9352057 0.624646383,5.35526395 C0.199019838,5.77541456 0.198881924,6.45614266 0.624129379,6.8759191 L4.35212111,10.555948 C4.38658274,10.6034965 4.42544251,10.6488955 4.46870038,10.6915969 C4.70907746,10.9288814 5.03375662,11.0320952 5.3475228,11.0013023 C5.59592563,10.9812599 5.83876209,10.8774981 6.02880771,10.6898975 C6.06831079,10.6509027 6.10414872,10.6096632 6.13632157,10.5665961 L13.9850992,2.81879759 C14.4107939,2.39857976 14.410861,1.71746456 13.985328,1.29740632 C13.5597015,0.8772557 12.8697673,0.877449143 12.444108,1.29763217 L5.24961475,8.39956394 Z"></path>
+            </g>
+          </svg>
+        </li>
+        <li class="checklist-item flex center-horizontal spread pad10">
+          <p class="paragraph primary-color mr20">Amazon Web Services</p>
+          <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            class="noshrink svg-fill">
+            <g transform="translate(4.000000, 5.000000)">
+              <path d="M5.24961475,8.39956394 L2.16512063,5.35475362 C1.74038521,4.93548271 1.05017933,4.9352057 0.624646383,5.35526395 C0.199019838,5.77541456 0.198881924,6.45614266 0.624129379,6.8759191 L4.35212111,10.555948 C4.38658274,10.6034965 4.42544251,10.6488955 4.46870038,10.6915969 C4.70907746,10.9288814 5.03375662,11.0320952 5.3475228,11.0013023 C5.59592563,10.9812599 5.83876209,10.8774981 6.02880771,10.6898975 C6.06831079,10.6509027 6.10414872,10.6096632 6.13632157,10.5665961 L13.9850992,2.81879759 C14.4107939,2.39857976 14.410861,1.71746456 13.985328,1.29740632 C13.5597015,0.8772557 12.8697673,0.877449143 12.444108,1.29763217 L5.24961475,8.39956394 Z"></path>
+            </g>
+          </svg>
+        </li>
+        <li class="checklist-item flex center-horizontal spread pad10">
+          <p class="paragraph primary-color mr20">DigitalOcean</p>
+          <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            class="noshrink svg-fill">
+            <g transform="translate(4.000000, 5.000000)">
+              <path d="M5.24961475,8.39956394 L2.16512063,5.35475362 C1.74038521,4.93548271 1.05017933,4.9352057 0.624646383,5.35526395 C0.199019838,5.77541456 0.198881924,6.45614266 0.624129379,6.8759191 L4.35212111,10.555948 C4.38658274,10.6034965 4.42544251,10.6488955 4.46870038,10.6915969 C4.70907746,10.9288814 5.03375662,11.0320952 5.3475228,11.0013023 C5.59592563,10.9812599 5.83876209,10.8774981 6.02880771,10.6898975 C6.06831079,10.6509027 6.10414872,10.6096632 6.13632157,10.5665961 L13.9850992,2.81879759 C14.4107939,2.39857976 14.410861,1.71746456 13.985328,1.29740632 C13.5597015,0.8772557 12.8697673,0.877449143 12.444108,1.29763217 L5.24961475,8.39956394 Z"></path>
+            </g>
+          </svg>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- <section id="faq-4" class="section black-white" sitemeta="[object Object]" activepage="Landing">
+    <div class="container">
+      <div class="col-12 text-center">
+        <h3 class="heading primary-color">
+          FAQ
+        </h3>
+        <p class="subheading secondary-color mt20">Subheading</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-12 mt40">
+        <div class="faq pad20">
+          <b class="bold primary-color">
+            Q
+          </b>
+          <p class="paragraph secondary-color">
+            A
+          </p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <section id="cta-5" class="section black-white" sitemeta="[object Object]" activepage="Landing">
+    <div class="container text-center">
+      <div class="col-12">
+        <div class="mt40 form-container">
+          <h3 id="contact" class="heading primary-color">Get in touch</h3>
+          <form id="contact-form" action="/contact" method="post" data-ajax-form>
+            {% csrf_token %} {{ form.as_p }}
+            <button class="button block accent-bg white-color" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer id="footer-6" class="section text-center black-white" sitemeta="[object Object]" activepage="Landing">
+    <div class="container col-12">
+      <!-- <nav class="mb50">
+        <a target="_blank" href="http://test.com" class="nav-link secondary-color">test</a>
+      </nav> -->
+      <div>
+        <a href="mailto:info@windwardapps.com" class="socialicons accent-bg email"></a>
+        <a href="https://www.linkedin.com/company/windward-apps" target="_blank" class="socialicons accent-bg linkedin"></a>
+      </div>
+    </div>
+  </footer>
+  <script src="{% static 'app/form.js' %}"></script>
+  <script src="{% static 'app/ajaxForm.js' %}"></script>
+  <script>
+    $(document).ready(function() {
+      $('.scroll-link').on('click', function() {
+        $('html, body').animate({ scrollTop: $('#contact').offset().top }, 1000);
+      });
+    });
+  </script>
 </div>
-<div class="why-us section">
-  <div class="container">
-    <h3>Why Us</h3>
-    <p>
-      The main reason people choose us and are happy with our services is this: we make things fun and painless for you.
-    </p>
-    <p>
-      The process of brainstorming applications and extracting requirements can be challenging. We make it fun for you by taking
-      burden of the difficult parts off your shoulders.
-    </p>
-    <p>
-      The phase of fine tuning the end result can be tedious. We don't put that on you. Leave the boring stuff to us.
-    </p>
-    <p>
-      Deploying the app and getting it in the hands of your users is something we have down to a science. Don't sweat it.
-    </p>
-    <p>
-      Most of all, the software we build integrates seamlessly with your processses, and is delightful to use.
-    </p>
-  </div>
-</div>
-<div class="how-we-work section">
-  <div class="container">
-    <h3>How We Work</h3>
-    <p>
-      Our first step in working together is a meeting with you at your office,
-      at a coffee shop, or wherever else you feel most comfortable. You tell us about your business—your processes, your
-      pain points, your challenges—all the areas where we can create solutions that bring improvements to your business.
-    </p>
-    <p>
-      From there, we'll come back to you after a few days with ideas and prototypes that may or may not blow your mind. You take
-      these ideas and give your feedback, and we'll come up with a scope of work.
-    </p>
-    <p>
-      Now the fun begins. We start building the app. We will be in touch with you as often as you like (in the daily to weekly
-      range). You will even be able to
-      <i>see and use app as it's being built</i>, thanks to our cutting edge tools and secure test environments.
-    </p>
-    <p>
-      You didn't even realize it because you were having so much fun, but your app is ready. Let's deploy it. Every scenario is
-      different, so let's put the app in the app stores, deploy it to a cloud instance, or put it in your server closet.
-      Whatever the case, we can figure out the logistics so you can sit back, relax, and wait for your app to come to you.
-    </p>
-    <p>
-      Enough reading. Let's talk.
-    </p>
-  </div>
-</div>
-<div class="contact section">
-  <div class="container">
-    <h3>Contact</h3>
-    <form id="contact-form" action="/contact" method="post" data-ajax-form>
-      {% csrf_token %} {{ form.as_p }}
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-</div>
-
-<script>
-  $(document).ready(function() {
-    var nav = document.getElementById('nav');
-    var banner = document.getElementById('banner');
-
-    function setNavbarState() {
-      var targetY = banner.clientHeight - nav.clientHeight;
-      if (window.pageYOffset > targetY && !nav.classList.contains('scrolled')) {
-        nav.classList.add('scrolled');
-      } else if (window.pageYOffset < targetY && nav.classList.contains('scrolled')) {
-        nav.classList.remove('scrolled');
-      }
-    }
-
-    setTimeout(function() {
-      setNavbarState();
-    }, 200);
-
-    window.addEventListener('scroll', setNavbarState);
-
-    var el = $('#contact-form')[0];
-    el._onSuccess = function() {
-      $(el).html('<div class="success-message">Thanks! We\'ll be in touch soon.</div>');
-    }
-  });
-
-</script>
-
-<script src="{% static 'app/form.js' %}"></script>
-<script src="{% static 'app/ajaxForm.js' %}"></script>
-{% endblock %}
+{% endblock %} {% block footer %}{% endblock footer %}
