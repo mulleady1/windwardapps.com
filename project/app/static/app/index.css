@@ -1,19 +1,7 @@
-.font-modern * {
-  font-family: 'Poppins', sans-serif;
-}
 .font-modern .heading-lrg,
 .font-modern .heading,
 .font-modern .heading-sml {
   font-weight: 300;
-}*,
-*:before,
-*:after {
-  margin: 0;
-	padding: 0;
-  box-sizing: border-box;
-  font-smoothing: antialiased;
-	-webkit-font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
 }
 .header {
 	padding-top: 40px;

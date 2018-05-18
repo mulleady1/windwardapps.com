@@ -1,7 +1,13 @@
-* {
+*,
+*:before,
+*:after {
+  margin: 0;
+	padding: 0;
   box-sizing: border-box;
+  font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
-
 html,
 body {
   margin: 0;
@@ -10,6 +16,9 @@ body {
   font-weight: 300;
   background: #172E53;
 }
+.font-modern * {
+  font-family: 'Poppins', sans-serif;
+}
 
 ul,
 li {
@@ -17,7 +26,6 @@ li {
   margin: 0;
   padding: 0;
 }
-
 h1,
 h2,
 h3,
