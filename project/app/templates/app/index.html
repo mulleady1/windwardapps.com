@@ -270,6 +270,11 @@
       $('.scroll-link').on('click', function() {
         $('html, body').animate({ scrollTop: $('#contact').offset().top }, 1000);
       });
+
+      var el = $('#contact-form')[0];
+      el._onSuccess = function() {
+        $(el).html('<div class="success-message">Thanks! We\'ll be in touch soon.</div>');
+      }
     });
   </script>
 </div>
