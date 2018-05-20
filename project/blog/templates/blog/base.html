@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %} {% load static %} {% block footer %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/base.css' %}" />
+<footer>
+  <div class="container">
+    <form id="subscribe-form" action="/news/subscribe" method="POST" data-ajax-form>
+      {% csrf_token %}
+      <h3>Want Hawaii's finest tech news delivered to your inbox?</h3>
+      <p>
+        <label>Sign up for our newsletter:</label>
+        <input type="email" name="email" placeholder="you@example.com" />
+      </p>
+      <button class="block" type="submit">Sign up</button>
+    </form>
+  </div>
+  <div class="container">
+    &copy;
+    <span id="year">2018</span> Windward Apps
+  </div>
+</footer>
+<script src="{% static 'app/ajaxForm.js' %}"></script>
+<script>
+  $(document).ready(function() {
+    var el = $('#subscribe-form')[0];
+    el._onSuccess = function() {
+      $(el).html('<div class="success-message">Good news: you\'ve been subscribed! Check your email soon for even more good news.</div>');
+    }
+  });
+</script>
+{% endblock %}

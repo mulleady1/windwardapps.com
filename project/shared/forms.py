@@ -9,6 +9,10 @@ class BaseForm(forms.Form):
         super(BaseForm, self).__init__(*args, **kwargs)
 
     def send_email(self, data):
+        if settings.DEBUG:
+            print(data)
+            return requests.Response()
+
         res = requests.post(
             settings.EMAIL_API_URL,
             auth=('api', settings.EMAIL_API_KEY),

@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from django.utils import timezone
 from shared.models import CharFieldWithTextarea
 
 
@@ -13,3 +13,8 @@ class BlogEntry(models.Model):
     pub_date = models.DateTimeField('date published')
     created_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     created_date = models.DateTimeField()
+
+class Subscriber(models.Model):
+    email = models.EmailField()
+    subscribe_date = models.DateTimeField(auto_now=True)
+    unsubscribe_date = models.DateTimeField(null=True)

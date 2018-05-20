@@ -1,0 +1,28 @@
+footer .container {
+  max-width: 840px;
+}
+footer form {
+  width: 100%;
+  max-width: 400px;
+}
+footer form h3 {
+  margin-bottom: 20px;
+}
+footer form label {
+  display: block;
+  margin-bottom: 10px;
+}
+footer form button {
+  color: #eee;
+  border-color: #aaa;
+  transition: all 50ms ease-in-out;
+}
+footer form button:hover,
+footer form button:active {
+  color: #fff;
+  border-color: #ddd;
+}
+.unsub {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}

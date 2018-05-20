@@ -1,0 +1,16 @@
+{% extends "app/email/base.html" %}
+
+{% block content %}
+<p>{{ email }},</p>
+<p>
+  Mahalo for subscribing to the Windward Apps newsletter! The next email you receive from us will be full of fresh tech news and Aloha.
+</p>
+<p>
+  The Windward Apps team
+</p>
+
+{% endblock content %}
+
+{% block additional_footer %}
+<div style="margin-top: 5px"><a style="color: #aaa" href="https://windwardapps.com/news/unsubscribe?email={{ email }}">Unsubscribe</a></div>
+{% endblock %}

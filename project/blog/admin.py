@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import BlogEntry
+from .models import BlogEntry, Subscriber
 
 
 class BlogEntryAdmin(admin.ModelAdmin):
@@ -8,3 +8,4 @@ class BlogEntryAdmin(admin.ModelAdmin):
 
 
 admin.site.register(BlogEntry, BlogEntryAdmin)
+admin.site.register(Subscriber)
