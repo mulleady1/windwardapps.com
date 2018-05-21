@@ -112,7 +112,7 @@ button:disabled {
 .nav .logo span {
   font-size: 32px;
   line-height: 34px;
-  font-family: 'Hi Melody', cursive;
+  font-family: 'Hi Melody', sans-serif;
 }
 .nav .logo img {
   height: 40px;
