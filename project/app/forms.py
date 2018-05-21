@@ -13,7 +13,7 @@ class ContactForm(BaseForm):
 
     def send_email(self):
         data = {
-            'from': 'noreply@windwardapps.com',
+            'from': 'Windward Apps <noreply@windwardapps.com>',
             'to': [settings.CONTACT_EMAIL],
             'subject': 'Contact request for windwardapps.com',
             'html': render_to_string('app/email/contact.html', self.cleaned_data)

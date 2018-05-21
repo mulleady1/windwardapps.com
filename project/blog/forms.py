@@ -9,7 +9,7 @@ class SubscribeForm(BaseForm):
 
     def send_email(self):
         data = {
-            'from': 'noreply@windwardapps.com',
+            'from': 'Windward Apps <newsletter@windwardapps.com>',
             'to': self.cleaned_data['email'],
             'subject': 'Thanks for subscribing!',
             'html': render_to_string('blog/email/subscribe-success.html', self.cleaned_data)
