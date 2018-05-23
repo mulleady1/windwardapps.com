@@ -8,14 +8,20 @@ from shared.views import AjaxFormView
 from .models import BlogEntry, Subscriber
 from .forms import SubscribeForm
 
+
 class BlogListView(ListView):
     model = BlogEntry
     template_name = 'blog/list.html'
+
+    def get_queryset(self):
+        """Return the published entries whose pub date is not in the future."""
+        return BlogEntry.objects.filter(pub_date__lte=now()).order_by('-pub_date')
 
 
 class BlogDetailView(DetailView):
     model = BlogEntry
     template_name = 'blog/detail.html'
+
 
 class SubscribeView(AjaxFormView):
     form_class = SubscribeForm
