@@ -14,7 +14,14 @@ class BlogEntry(models.Model):
     created_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     created_date = models.DateTimeField()
 
+    def __str__(self):
+        return '{} - {}'.format(self.title, self.headline)
+
+
 class Subscriber(models.Model):
     email = models.EmailField()
     subscribe_date = models.DateTimeField(auto_now=True)
     unsubscribe_date = models.DateTimeField(null=True)
+
+    def __str__(self):
+        return self.email
