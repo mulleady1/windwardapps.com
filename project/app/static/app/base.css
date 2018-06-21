@@ -12,11 +12,14 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Varela', sans-serif;
   font-weight: 300;
   background: #172E53;
 }
 .font-modern * {
+  font-family: 'Varela', sans-serif;
+}
+.font-poppins * {
   font-family: 'Poppins', sans-serif;
 }
 
@@ -110,9 +113,13 @@ button:disabled {
   align-items: center;
 }
 .nav .logo span {
-  font-size: 32px;
-  line-height: 34px;
-  font-family: 'Hi Melody', sans-serif;
+  font-size: 22px;
+  font-family: 'Varela', sans-serif;
+  position: relative;
+  top: 1px;
+}
+.header .logo span {
+  font-family: 'Varela', sans-serif;
 }
 .nav .logo img {
   height: 40px;
