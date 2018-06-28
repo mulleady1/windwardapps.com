@@ -1,23 +1,23 @@
-{% extends "app/email/base.html" %}
-
-{% block content %}
-  <h3>Contact request for windwardapps.com</h3>
-  <table>
-    <tr>
-      <td>Name:</td>
-      <td>{{ name }}</td>
-    </tr>
-    <tr>
-      <td>Email:</td>
-      <td>{{ email }}</td>
-    </tr>
-    <tr>
-      <td>Phone:</td>
-      <td>{{ phone }}</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top">Message:</td>
-      <td style="white-space: pre-line">{{ message }}</td>
-    </tr>
-  </table>
+{% extends "app/email/base.html" %} {% block content %}
+<h3>Contact request for windwardapps.com</h3>
+<table>
+  <tr>
+    <td>Name:</td>
+    <td>{{ name }}</td>
+  </tr>
+  <tr>
+    <td>Email:</td>
+    <td>{{ email }}</td>
+  </tr>
+  <tr>
+    <td>Phone:</td>
+    <td>{{ phone }}</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top">Message:</td>
+    <td>
+      <div style="white-space: pre-line">{{ message }}</div>
+    </td>
+  </tr>
+</table>
 {% endblock content %}
