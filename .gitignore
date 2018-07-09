@@ -24,3 +24,5 @@ db.sqlite3
 *.log
 .vscode/.ropeproject
 dump.json
+
+/data
