@@ -7,7 +7,7 @@ from shared.models import CharFieldWithTextarea
 class BlogEntry(models.Model):
     title = models.CharField(max_length=200)
     headline = models.CharField(max_length=400, blank=True, null=True)
-    content = CharFieldWithTextarea(max_length=100000)
+    content = models.TextField()
     slug = models.SlugField()
     image_url = models.CharField(max_length=1000, blank=True, null=True)
     pub_date = models.DateTimeField('date published')
