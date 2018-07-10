@@ -11,14 +11,20 @@
   <title>Windward Apps</title>
 
   <link href="//fonts.googleapis.com/css?family=Montserrat:200,300,400" rel="stylesheet">
+
+  <style>
+    .windward-apps .content p {
+      margin: 0 0 30px 0;
+    }
+  </style>
 </head>
 
 <body style="background-color: #f6f6f6; padding: 0; margin: 0; font-family: 'Montserrat', sans-serif; font-size: 16px;">
-  <div style="max-width: 600px; margin: auto;">
+  <div style="max-width: 600px; margin: auto;" class="windward-apps">
     <div style="padding: 30px 0; text-align: center;">
       <img src="https://windwardapps.com{% static 'app/images/logo-75x68.png' %}" style="height: 68px !important;" />
     </div>
-    <div style="padding: 30px; background-color: #fff; margin: 0 5px">
+    <div style="padding: 40px; background-color: #fff; margin: 0 5px" class="content">
       {% block content %}{% endblock %}
     </div>
     <div style="padding: 40px 20px; font-size: 12px; color: #aaa; line-height: 15px; text-align: center;">
