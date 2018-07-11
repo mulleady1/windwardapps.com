@@ -1,10 +1,10 @@
-version: '2.1'
+version: '3'
 
 services:
   db:
     image: mysql:5.7.22
     ports:
-      - 3306:3306
+      - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=967tree4
       - MYSQL_DATABASE=windwardapps_db
@@ -12,6 +12,8 @@ services:
       - MYSQL_PASSWORD=windwardapps_db_pass
     volumes:
       - ./data:/var/lib/mysql
+    networks:
+      - app-network
   app:
     image: windwardapps
     build:
@@ -19,7 +21,7 @@ services:
       dockerfile: Dockerfile
     command: python manage.py runserver 0.0.0.0:2200
     ports:
-      - 2200:2200
+      - "2200:2200"
     environment:
       - DJANGO_SETTINGS_MODULE=project.settings_dev
       - WA_CONTACT_EMAIL=
@@ -31,3 +33,12 @@ services:
       - ./project:/app/project
     depends_on:
       - db
+    networks:
+      - app-network
+      - external-net
+networks:
+  app-network: {}
+  external-net:
+    external:
+      name: external-net
+
