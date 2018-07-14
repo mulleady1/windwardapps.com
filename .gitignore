@@ -26,4 +26,5 @@ db.sqlite3
 dump.json
 
 /data
+project/data
 /static
