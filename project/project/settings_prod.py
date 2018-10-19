@@ -121,7 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/app/static/'
+STATIC_ROOT = '/var/www/windwardapps.com/static/'
 
 CONTACT_EMAIL = os.environ.get('WA_CONTACT_EMAIL', '')
 EMAIL_API_URL = os.environ.get('WA_EMAIL_API_URL', '')
