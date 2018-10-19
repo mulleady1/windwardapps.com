@@ -78,12 +78,8 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'windwardapps_db',
-        'USER': os.environ.get('WA_DB_USER'),
-        'PASSWORD': os.environ.get('WA_DB_PASS'),
-        'HOST': os.environ.get('WA_DB_HOST'),
-        'PORT': os.environ.get('WA_DB_PORT'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
     }
 }
 
