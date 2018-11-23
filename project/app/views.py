@@ -9,6 +9,7 @@ from .forms import ContactForm, LoginForm
 from shared.http import JsonErrorResponse
 from shared.views import AjaxFormView
 
+
 class IndexView(AjaxFormView):
     form_class = ContactForm
     template_name = 'app/index.html'
@@ -17,18 +18,21 @@ class IndexView(AjaxFormView):
         form.send_email()
         return super(IndexView, self).form_valid(form)
 
+
 class LoginView(FormView):
     form_class = LoginForm
     template_name = 'app/login.html'
     success_url = '/'
 
     def form_valid(self, form):
-        user = authenticate(username=form.data['username'], password=form.data['password'])
+        user = authenticate(
+            username=form.data['username'], password=form.data['password'])
         if user is None:
-            return JsonErrorResponse({ 'msg': 'Invalid credentials.' })
+            return JsonErrorResponse({'msg': 'Invalid credentials.'})
 
         login(self.request, user)
         return super(LoginView, self).form_valid(form)
+
 
 class LogoutView(RedirectView):
     url = '/'
@@ -36,3 +40,7 @@ class LogoutView(RedirectView):
     def get(self, request, *args, **kwargs):
         logout(request)
         return super(LogoutView, self).get(request, *args, **kwargs)
+
+
+def about(req):
+    return render(req, 'app/about.html')

@@ -1,0 +1,78 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block content %}
+  <style>
+    .about {
+      font-size: 18px;
+    }
+    .about .section {
+      padding: 40px 0;
+    }
+    .about .section + .section {
+      border-top: 1px solid #ddd;
+    }
+    .about .title {
+      text-align: center;
+    }
+    .about h2 {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+  </style>
+  <div class="about">
+    <div class="section">
+      <div class="container">
+        <h1 class="title">About Us</h1>
+      </div>
+    </div>
+    <div class="banner">
+      <div class="container">
+        <h3>Solving business problems through software, one app at a time</h3>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <h2>The <i>What</i></h2>
+        <p>
+          We build web and mobile applications that solve a variety of problems. We
+          help your organization run more efficiently, help generate revenue, attract
+          new customers, and anything else that makes your life easier. From
+          workflow automation, to e-commerce, to startup platforms and everything
+          in between, we do it and we can help.
+        </p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <h2>The <i>How</i></h2>
+        <p>
+          We are an agile team that embraces modern engineering techniques to build
+          great software. We work quickly yet carefully. We iterate and improve constantly.
+          We do all this in the name of building the applications you need for your
+          organization and will love to use.
+        </p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <h2>The <i>Why</i></h2>
+        <p>
+          <div class="quote">
+            "Windward Apps was born out of need to fix the issue of companies paying
+            too much for subpar software. Over many years working as an employee at various
+            companies, I saw all too often that clients were receiving an end result that
+            was not up to standard—features missing or not implemented correctly, solutions
+            delivered way behind schedule, buggy applications, vendors not respecting clients'
+            budget—the list goes on. I created Windward Apps with one simple principle:
+            bring excellent customer service to the software service industry. With that comes
+            software this is elegant, robust, built to spec, well-engineered,
+            and delivered on time and on budget."
+          </div>
+          <div>- Kyle Mulleady, Founder</div>
+        </p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
