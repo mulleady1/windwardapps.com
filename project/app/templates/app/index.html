@@ -1,15 +1,17 @@
 {% extends "app/base.html" %} {% load static %} {% block nav %}{% endblock nav %} {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'app/index.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'app/nav-links.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'app/form.css' %}" />
 <div class="font-poppins">
   <div class="black-flat">
-    <header class="header">
+    <nav class="header">
       <div class="container-lrg">
-        <div class="flex col-12 spread">
-          <a class="logo primary-color logo flex-row">
+        <div class="flex col-12 spread align-center">
+          <a class="logo primary-color logo flex-row align-center">
             <img src="{% static 'app/images/logo-white-100x91.png' %}" />
             <span>Windward Apps</span>
           </a>
+          <input type="checkbox" class="nav-menu-trigger"></button>
           <div class="links">
             <a href="/about" class="nav-link secondary-color mr0">About</a>
             <a href="/services" class="nav-link secondary-color mr0">Services</a>
@@ -18,7 +20,7 @@
           </div>
         </div>
       </div>
-    </header>
+    </nav>
     <section class="section">
       <div class="container mb40">
         <div class="col-12 text-center">

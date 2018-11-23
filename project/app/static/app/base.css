@@ -88,7 +88,7 @@ button:disabled {
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  padding: 0 20px;
+  padding-left: 20px;
 }
 .nav ul {
   display: flex;
@@ -116,68 +116,6 @@ button:disabled {
 .nav .logo:hover, .nav .logo:active {
   text-decoration: none;
 }
-
-.nav .links li + li {
-  margin-left: 40px;
-}
-.nav .nav-menu-trigger {
-  cursor: pointer;
-  width: 60px;
-  height: 60px;
-  background-repeat: no-repeat;
-  background-position: center;
-  -webkit-appearance: none;
-  appearance: none;
-  border: none;
-  box-shadow: none;
-  background-color: #0000;
-  background-image: url("images/menu.svg");
-}
-.nav .nav-menu-trigger:focus {
-  outline: none;
-}
-.nav .nav-menu-trigger:checked {
-  background-image: url("images/close.svg");
-  position: relative;
-  z-index: 200;
-}
-.nav .nav-menu-trigger:checked + .links {
-  display: block;
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  padding: 70px 0 10px;
-  background: #172E53;
-  animation: fade-in 100ms ease-in-out;
-}
-.nav .nav-menu-trigger:checked + .links ul {
-  display: flex;
-  flex-direction: column;
-}
-nav .nav-menu-trigger:checked + .links li + li {
-  margin-left: 0;
-}
-nav .nav-menu-trigger:checked + .links a {
-  display: block;
-  padding: 10px 20px;
-  font-size: 20px;
-}
-@media (max-width: 768px) {
-  .nav .container {
-    padding-right: 0;
-  }
-  .nav .nav-menu-trigger:not(:checked) + .links {
-    display: none;
-  }
-}
-@media (min-width: 769px) {
-  .nav .nav-menu-trigger {
-    display: none;
-  }
-}
 footer {
   background: #172E53;
   color: #eee;
@@ -185,6 +123,12 @@ footer {
 }
 #main {
   background: #fff;
+}
+.pagename {
+  padding: 40px 0;
+}
+.pagename .title {
+  text-align: center;
 }
 .banner {
   padding: 100px 20px;

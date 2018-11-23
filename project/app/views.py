@@ -44,3 +44,7 @@ class LogoutView(RedirectView):
 
 def about(req):
     return render(req, 'app/about.html')
+
+
+def services(req):
+    return render(req, 'app/services.html')

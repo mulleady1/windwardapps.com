@@ -1,7 +1,16 @@
 {% extends 'blog/base.html' %} {% load static %} {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'blog/list.css' %}" />
+<div class="pagename">
+  <div class="container">
+    <h1 class="title">News</h1>
+  </div>
+</div>
+<div class="banner">
+  <div class="container">
+    <h3>Keep up with Windward Apps</h3>
+  </div>
+</div>
 <div class="container">
-  <h1>News</h1>
   <ul class="blog-entries">
     {% for entry in object_list %}
     <li>

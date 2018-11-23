@@ -1,0 +1,67 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block content %}
+  <style>
+    .services {
+      font-size: 18px;
+    }
+    .services .section {
+      padding: 40px 0;
+    }
+    .services .section + .section {
+      border-top: 1px solid #ddd;
+    }
+    .services h2 {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+  </style>
+  <div class="services">
+    <div class="pagename">
+      <div class="container">
+        <h1 class="title">Services</h1>
+      </div>
+    </div>
+    <div class="banner">
+      <div class="container">
+        <h3>Next-gen applications. Waiting to appear on your screen.</h3>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <h2>Web</h2>
+        <p>
+          Web, Javascript, React, Node, Python, etc.
+        </p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <h2>Mobile</h2>
+        <p>
+          iOS, Android, Cloud servers, etc.
+        </p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <h2>Cloud</h2>
+        <p>
+          DigitalOcean, Amazon Web Services, etc.
+        </p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <h2>And more</h2>
+        <p>
+          We push our boundaries to help you push yours. We have experience branching out from
+          the typical application environments to bring innovative solutions that solve your problems.
+          Desktop? Geographic information systems (GIS)? Raspberry Pi? Yeah, we've built apps for that.
+        </p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

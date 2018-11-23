@@ -6,6 +6,11 @@
 .header {
 	padding-top: 40px;
 }
+@media (max-width: 768px) {
+  .header {
+    padding-top: 25px;
+  }
+}
 .logo {
   font-size: calc(80% + 1vw);
   line-height: 44px;
@@ -29,6 +34,13 @@
 }
 .nav-link:hover {
   text-decoration: underline;
+}
+.nav-menu-trigger {
+  margin-top: -10px;
+}
+.nav-menu-trigger:checked {
+  margin-top: -15px;
+  margin-right: -10px;
 }
 .logo img {
   height: 44px;
