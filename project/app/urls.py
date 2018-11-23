@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import IndexView, LoginView, LogoutView, about, services
+from .views import IndexView, LoginView, LogoutView, about, services, vendorprofile
 
 urlpatterns = [
     path('', IndexView.as_view(), name='index'),
@@ -9,4 +9,5 @@ urlpatterns = [
     path('logout', LogoutView.as_view(), name='logout'),
     path('about', about, name='about'),
     path('services', services, name='services'),
+    path('vendor-profile', vendorprofile, name='vendorprofile'),
 ]

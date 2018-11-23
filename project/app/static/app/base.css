@@ -38,6 +38,9 @@ h6 {
   padding: 0;
   font-weight: 300;
 }
+p + p {
+  margin-top: 20px;
+}
 a {
   text-decoration: none;
 }

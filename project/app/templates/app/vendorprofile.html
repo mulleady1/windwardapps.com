@@ -1,0 +1,51 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block content %}
+  <style>
+    .vendor-profile {
+      font-size: 18px;
+    }
+    .vendor-profile .section {
+      padding: 40px 0;
+    }
+    .vendor-profile .section + .section {
+      border-top: 1px solid #ddd;
+    }
+    .vendor-profile h2 {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+  </style>
+  <div class="vendor-profile">
+    <div class="pagename">
+      <div class="container">
+        <h1 class="title">Vendor Profile</h1>
+      </div>
+    </div>
+    <div class="banner">
+      <div class="container">
+        <h3>Windward Apps and government agencies make a great team</h3>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <h2>SDVOSB</h2>
+        <p>
+          Windward Apps is a service disabled veteran-owned small business (SDVOSB), operating
+          under NAICS code 541511. We are a prime contractor and subcontractor for federal organizations,
+          notably the VA.
+        </p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <h2>Local Governments</h2>
+        <p>
+          We do business with local and state government agencies in Hawaii and California.
+        </p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

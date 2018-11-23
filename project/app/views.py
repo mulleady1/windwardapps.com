@@ -48,3 +48,7 @@ def about(req):
 
 def services(req):
     return render(req, 'app/services.html')
+
+
+def vendorprofile(req):
+    return render(req, 'app/vendorprofile.html')
