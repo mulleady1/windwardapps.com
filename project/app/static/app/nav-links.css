@@ -48,6 +48,9 @@ nav .nav-menu-trigger:checked + .links a {
   nav .container {
     padding-right: 0;
   }
+  nav .nav-menu-trigger {
+    display: flex;
+  }
   nav .nav-menu-trigger:not(:checked) + .links {
     display: none;
   }
