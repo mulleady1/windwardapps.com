@@ -15,9 +15,9 @@
   font-size: 27px;
   line-height: 44px;
   font-weight: bold;
-  span {
-    white-space: nowrap;
-  }
+}
+.header .logo span {
+  white-space: nowrap;
 }
 @media (max-width: 400px) {
   .logo {
