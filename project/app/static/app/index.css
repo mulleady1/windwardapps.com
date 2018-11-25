@@ -15,7 +15,9 @@
   font-size: 27px;
   line-height: 44px;
   font-weight: bold;
-  flex-wrap: nowrap;
+  span {
+    white-space: nowrap;
+  }
 }
 @media (max-width: 400px) {
   .logo {
@@ -25,6 +27,11 @@
 @media (max-width: 350px) {
   .logo {
     font-size: 18px;
+  }
+}
+@media (max-width: 300px) {
+  .logo {
+    font-size: 16px;
   }
 }
 .logo:hover {
