@@ -10,7 +10,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
+import logging
 import os
+
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='[%(asctime)s][%(levelname)s][%(name)s][%(funcName)s] %(message)s',
+    datefmt='%Y-%m-%dT%I:%M:%S%p'
+)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
