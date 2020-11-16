@@ -10,7 +10,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
+import logging
 import os
+
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='[%(asctime)s][%(levelname)s][%(name)s][%(funcName)s] %(message)s',
+    datefmt='%Y-%m-%dT%I:%M:%S%p'
+)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -125,28 +132,5 @@ STATIC_URL = '/static/'
 CONTACT_EMAIL = os.environ.get('WA_CONTACT_EMAIL', '')
 EMAIL_API_URL = os.environ.get('WA_EMAIL_API_URL', '')
 EMAIL_API_KEY = os.environ.get('WA_EMAIL_API_KEY', '')
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        # 'file': {
-        #     'level': 'DEBUG',
-        #     'class': 'logging.FileHandler',
-        #     'filename': os.path.join(BASE_DIR, 'logs/debug.log')
-        # },
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler'
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
-}
 
 APPEND_SLASH = False

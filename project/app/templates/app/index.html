@@ -250,7 +250,9 @@
           <h3 id="contact" class="heading primary-color">Get in touch</h3>
           <form id="contact-form" action="/contact" method="post" data-ajax-form>
             {% csrf_token %} {{ form.as_p }}
-            <button class="button block accent-bg white-color" type="submit">Submit</button>
+            <div class="h-captcha" data-sitekey="0e7ad9a6-44c0-4224-8025-2dad3cde816d" data-callback="onCaptchaSuccess"></div>
+            <button id="contact-form-submit" class="button block accent-bg white-color" type="submit" disabled>Submit</button>
+            <script src="https://hcaptcha.com/1/api.js" async defer></script>
           </form>
         </div>
       </div>
@@ -280,6 +282,11 @@
         $(el).html('<div class="success-message">Thanks! We\'ll be in touch soon.</div>');
       }
     });
+
+    function onCaptchaSuccess() {
+      var btn = document.getElementById('contact-form-submit');
+      btn.disabled = false;
+    }
   </script>
 </div>
 {% endblock %} {% block footer %}{% endblock footer %}
