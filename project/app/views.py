@@ -30,8 +30,8 @@ class IndexView(AjaxFormView):
         r = requests.post("https://hcaptcha.com/siteverify", json=params)
         result = r.json()
         logger.debug('hcaptcha response=%s', result)
-        if not result['success']:
-            return JsonErrorResponse({'error': 'captcha error'})
+        # if not result['success']:
+        #     return JsonErrorResponse({'error': 'captcha error'})
 
         form.send_email()
         return super(IndexView, self).form_valid(form)
