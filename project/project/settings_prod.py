@@ -13,14 +13,15 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 import logging
 import os
 
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 logging.basicConfig(
     level=logging.DEBUG,
+    filename=os.path.join(BASE_DIR, 'windwardapps.log'),
     format='[%(asctime)s][%(levelname)s][%(name)s][%(funcName)s] %(message)s',
     datefmt='%Y-%m-%dT%I:%M:%S%p'
 )
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -133,24 +134,5 @@ STATIC_ROOT = '/var/www/windwardapps.com/static/'
 CONTACT_EMAIL = os.environ.get('WA_CONTACT_EMAIL', '')
 EMAIL_API_URL = os.environ.get('WA_EMAIL_API_URL', '')
 EMAIL_API_KEY = os.environ.get('WA_EMAIL_API_KEY', '')
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': '/var/log/windwardapps.com/django-debug.log',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
-}
 
 APPEND_SLASH = False
