@@ -12,6 +12,12 @@ class ContactForm(BaseForm):
     message = forms.CharField(widget=forms.Textarea)
 
     def send_email(self):
+        try:
+            if self.cleaned_data['email'] in settings.BAD_EMAILS:
+                return
+        except:
+            pass
+
         data = {
             'from': 'Windward Apps <noreply@windwardapps.com>',
             'to': [settings.CONTACT_EMAIL],

@@ -134,5 +134,6 @@ STATIC_ROOT = '/var/www/windwardapps.com/static/'
 CONTACT_EMAIL = os.environ.get('WA_CONTACT_EMAIL', '')
 EMAIL_API_URL = os.environ.get('WA_EMAIL_API_URL', '')
 EMAIL_API_KEY = os.environ.get('WA_EMAIL_API_KEY', '')
+BAD_EMAILS = os.environ.get('WA_BAD_EMAILS', '').split(',')
 
 APPEND_SLASH = False
