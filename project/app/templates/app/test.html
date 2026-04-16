@@ -1,0 +1,47 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block content %}
+  <style>
+    .vendor-profile {
+      font-size: 18px;
+    }
+    .vendor-profile .section {
+      padding: 40px 0;
+    }
+    .vendor-profile .section + .section {
+      border-top: 1px solid #ddd;
+    }
+    .vendor-profile h2 {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+  </style>
+  <div class="vendor-profile">
+    <div class="pagename">
+      <div class="container">
+        <h1 class="title">[Test]</h1>
+      </div>
+    </div>
+    <div class="banner">
+      <div class="container">
+        <h3>Windward Apps test page</h3>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container" id="iframe-container">
+        <script>
+          var parent = document.getElementById('iframe-container')
+          var div = document.createElement('div')
+          parent.appendChild(div)
+          var url = 'https://indicators.windwardapps.com/' + window.location.search
+          div.outerHTML = `
+            <div style="display:flex; justify-content:center;">
+              <iframe src="${url}" allow="clipboard-read;" style="border:none; width:1000px; height:610px; margin:auto;"></iframe>
+            </div>`
+        </script>
+      </div>      
+    </div>
+  </div>
+
+{% endblock %}

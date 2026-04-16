@@ -27,11 +27,11 @@ class IndexView(AjaxFormView):
             "response": token
         }
 
-        r = requests.post("https://hcaptcha.com/siteverify", json=params)
+        r = requests.post("https://hcaptcha.com/siteverify", data=params)
         result = r.json()
         logger.debug('hcaptcha response=%s', result)
-        # if not result['success']:
-        #     return JsonErrorResponse({'error': 'captcha error'})
+        if not result['success']:
+            return JsonErrorResponse({'error': 'captcha error'})
 
         form.send_email()
         return super(IndexView, self).form_valid(form)
@@ -70,3 +70,6 @@ def services(req):
 
 def vendorprofile(req):
     return render(req, 'app/vendorprofile.html')
+
+def test(req):
+    return render(req, 'app/test.html')

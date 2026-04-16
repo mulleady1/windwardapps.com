@@ -38,7 +38,7 @@ class SubscribeView(AjaxFormView):
         except ObjectDoesNotExist:
             Subscriber.objects.create(email=email)
 
-        form.send_email()
+        # form.send_email()
         return super(SubscribeView, self).form_valid(form)
 
 

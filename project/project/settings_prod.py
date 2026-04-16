@@ -137,3 +137,6 @@ EMAIL_API_KEY = os.environ.get('WA_EMAIL_API_KEY', '')
 BAD_EMAILS = os.environ.get('WA_BAD_EMAILS', '').split(',')
 
 APPEND_SLASH = False
+
+CSRF_TRUSTED_ORIGINS = ['https://windwardapps.com']
+
