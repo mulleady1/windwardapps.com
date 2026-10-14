@@ -16,7 +16,7 @@ env/bin/python manage.py migrate --noinput
 echo "[deploy] collecting static"
 env/bin/python manage.py collectstatic --noinput | tail -1
 echo "[deploy] reloading gunicorn"
-kill -HUP "$(systemctl show -p MainPID --value windwardapps.com.service)"
+sudo -n systemctl reload windwardapps.com.service
 sleep 3
 code=$(curl -s -o /dev/null -w '%{http_code}' -H 'Host: windwardapps.com' http://127.0.0.1:9100/)
 echo "[deploy] local gunicorn answered $code"
