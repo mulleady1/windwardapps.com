@@ -1,0 +1,112 @@
+{% load static %}<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="google-site-verification" content="bIX0_6lZGRTJSVbVJMYDSWupDyFGjYF5srAaF8OBBpE" />
+  <meta name="description" content="{% block description %}Windward Apps is an AI-augmented software consultancy in Kailua, Hawaiʻi. Enterprise-scale systems for government and business in months, not years. Service-disabled veteran-owned.{% endblock %}">
+  <meta name="theme-color" content="#172e53">
+
+  <title>{% block title %}Windward Apps — AI-augmented software consultancy in Hawaiʻi{% endblock %}</title>
+
+  <link rel="icon" type="image/png" href="{% static 'app/images/logo-50x45.png' %}">
+  <link rel="apple-touch-icon" href="{% static 'app/images/logo-150x136.png' %}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'app/site.css' %}">
+  {% block head %}{% endblock %}
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="brand">
+        <img src="{% static 'app/images/logo-100x91.png' %}" alt="" width="40" height="36">
+        <span>Windward Apps</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+        <svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <nav id="site-nav" class="nav">
+        <a href="/about" {% if request.path == '/about' %}class="is-active"{% endif %}>About</a>
+        <a href="/services" {% if request.path == '/services' %}class="is-active"{% endif %}>Services</a>
+        <a href="/vendor-profile" {% if request.path == '/vendor-profile' %}class="is-active"{% endif %}>Vendor Profile</a>
+        <a href="/news" {% if request.path|slice:':5' == '/news' %}class="is-active"{% endif %}>News</a>
+        <a href="/#contact" class="btn btn-primary btn-sm">Start a project</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% block footer_cta %}{% endblock %}
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div>
+          <a href="/" class="brand">
+            <img src="{% static 'app/images/logo-white-100x91.png' %}" alt="" width="35" height="32">
+            <span>Windward Apps</span>
+          </a>
+          <p class="tagline">An AI-augmented software consultancy in Kailua, Hawaiʻi. Custom systems for government and business.</p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/vendor-profile">Vendor Profile</a></li>
+            <li><a href="/news">News</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@windwardapps.com">info@windwardapps.com</a></li>
+            <li><a href="https://www.linkedin.com/company/windward-apps" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="/#contact">Start a project</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; {% now "Y" %} Windward Apps. Service-disabled veteran-owned small business.</span>
+        {% if user and user.is_authenticated %}
+          <a href="/logout">Log out {{ user.username }}</a>
+        {% else %}
+          <a href="/login">Admin</a>
+        {% endif %}
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'app/jquery.min.js' %}"></script>
+  <script>
+    (function () {
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.getElementById('site-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.classList.toggle('no-scroll', open);
+      });
+      nav.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A' && nav.classList.contains('is-open')) {
+          nav.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('no-scroll');
+        }
+      });
+    })();
+  </script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

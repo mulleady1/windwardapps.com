@@ -1,0 +1,26 @@
+{% extends 'app/news/base.html' %}
+{% load static %}
+
+{% block title %}{{ object.title }} — Windward Apps{% endblock %}
+{% block description %}{{ object.headline|default:object.title }}{% endblock %}
+
+{% block content %}
+<section class="section">
+  <div class="container container-narrow">
+    <article class="article">
+      <header>
+        <a href="/news" class="kicker">News</a>
+        <h1>{{ object.title }}</h1>
+        {% if object.headline %}<p class="lead">{{ object.headline }}</p>{% endif %}
+        <p class="date">{{ object.pub_date|date:'M j, Y' }}</p>
+        {% if object.image_url %}
+        <div class="figure">
+          <img src="{% static 'app/images/news/' %}{{ object.image_url }}" alt="">
+        </div>
+        {% endif %}
+      </header>
+      <div class="content">{{ object.content|safe }}</div>
+    </article>
+  </div>
+</section>
+{% endblock %}

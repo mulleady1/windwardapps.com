@@ -1,0 +1,70 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %}About — Windward Apps{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  {% include "app/_wind.html" %}
+  <div class="container">
+    <h1>Hawaiʻi's <span class="nowrap">AI-augmented</span> software consultancy</h1>
+    <p class="lead">A small, senior team in Kailua that builds advanced systems for government and business, faster and for less than the old way allowed.</p>
+  </div>
+</section>
+
+<section class="container">
+  <div class="prose-section">
+    <h2>The <em>what</em></h2>
+    <div class="prose">
+      <p>
+        We build the systems organizations actually run on: custom applications, portals, data
+        pipelines, automation, and the modernization of whatever came before. Our clients are
+        government agencies and businesses in Hawaiʻi and on the mainland, and the work ranges
+        from a single tool for one team to enterprise-scale platforms.
+      </p>
+    </div>
+  </div>
+  <div class="prose-section">
+    <h2>The <em>how</em></h2>
+    <div class="prose">
+      <p>
+        Agent-driven development. Our engineers direct AI agents that write, test and refactor
+        code, then review everything before it ships. That is how a team our size delivers
+        enterprise-scale work in months instead of years, and why our pricing looks the
+        way it does.
+      </p>
+      <p>
+        The craft hasn't changed: short iterations, working software in your hands early, and
+        a senior engineer accountable for every line. The speed has.
+      </p>
+    </div>
+  </div>
+  <div class="prose-section">
+    <h2>The <em>why</em></h2>
+    <div class="prose">
+      <blockquote class="pull-quote">
+        Windward Apps was created to fix the problem of businesses paying too much for software
+        that did too little. Over many years as an employee at various companies, I saw all too
+        often that clients received a subpar result: features missing or built wrong, delivery
+        behind schedule, buggy applications, budgets not respected. I started Windward Apps on one
+        principle: bring excellent customer service to the software service industry. That means
+        software that is elegant, robust, built to spec, well engineered, and delivered on time
+        and on budget. Agent-driven development is the biggest lever I've ever had for keeping
+        that promise.
+        <cite>Kyle Mulleady, Founder</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="endnote">
+  <div class="container">
+    <div>
+      {% include "app/_wind.html" %}
+    <h2>Have a project in mind?</h2>
+      <p>Tell us what you're building and we'll tell you what it would take.</p>
+      <a href="/#contact" class="btn btn-primary">Start a project</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

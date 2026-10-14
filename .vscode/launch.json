@@ -1,20 +1,18 @@
 {
-  // Use IntelliSense to learn about possible attributes.
-  // Hover to view descriptions of existing attributes.
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Python: Django",
-      "type": "python",
+      "name": "Django: runserver",
+      "type": "debugpy",
       "request": "launch",
-      "stopOnEntry": false,
-      "pythonPath": "${config:python.pythonPath}",
-      "program": "${workspaceFolder}/project/manage.py",
+      "program": "${workspaceFolder}/manage.py",
+      "args": [
+        "runserver",
+        "--noreload"
+      ],
       "cwd": "${workspaceFolder}",
-      "args": ["runserver", "--noreload", "--nothreading"],
-      "envFile": "${workspaceFolder}/.env.dev",
-      "debugOptions": ["RedirectOutput", "Django"]
+      "django": true,
+      "justMyCode": false
     }
   ]
 }

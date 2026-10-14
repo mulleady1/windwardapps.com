@@ -16,15 +16,18 @@
 .env.test.local
 .env.production.local
 
-project/env
+/env
+/.venv
 *.pyc
-project/db.sqlite3
+__pycache__/
+/db.sqlite3
 
+.env
 .env.*
 *.log
 .vscode/.ropeproject
 dump.json
 
 /data
-project/data
 /static
+/coverage

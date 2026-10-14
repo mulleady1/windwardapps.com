@@ -1,0 +1,97 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %}Services — Windward Apps{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  {% include "app/_wind.html" %}
+  <div class="container">
+    <h1>Custom systems for the work your organization actually does.</h1>
+    <p class="lead">Everything below is built the same way: a small senior team that uses AI heavily, short sprints, and a scope you agree to before work starts.</p>
+  </div>
+</section>
+
+<section class="container">
+  <div class="prose-section">
+    <h2>Custom applications</h2>
+    <div class="prose">
+      <p>
+        Web and mobile software shaped around how your organization actually works. Public portals,
+        case and workflow management, field data collection, internal tools, and the integrations
+        that tie them together.
+      </p>
+      <p>
+        Web is our default because it reaches every device instantly and there is nothing to
+        install or approve. When you need native hardware access or offline use, we build native
+        iOS and Android apps.
+      </p>
+    </div>
+  </div>
+  <div class="prose-section">
+    <h2>Modernization &amp; automation</h2>
+    <div class="prose">
+      <p>
+        Paper forms, fax, spreadsheets, and the system nobody wants to touch. We replace them
+        incrementally, keep the data intact, and automate the hand-offs in between so your staff
+        stop re-keying the same information three times.
+      </p>
+      <p>
+        This kind of work is dramatically cheaper than it used to be, which means modernization
+        projects that never cleared a budget committee are now within reach.
+      </p>
+    </div>
+  </div>
+  <div class="prose-section">
+    <h2>Data &amp; reporting</h2>
+    <div class="prose">
+      <p>
+        Pipelines that pull from the systems you already have, reshape the data for the people who
+        need it, and feed dashboards and required reporting. One source of truth, refreshed
+        automatically.
+      </p>
+    </div>
+  </div>
+  <div class="prose-section">
+    <h2>AI integration</h2>
+    <div class="prose">
+      <p>
+        We connect the systems you already run to frontier models. Through their APIs, for
+        document intake, summarization and search across your records. Through MCP servers, so an
+        assistant can read from and act on the tools your staff already use. Access controls and
+        audit trails are part of the build, and your data stays yours.
+      </p>
+    </div>
+  </div>
+  <div class="prose-section">
+    <h2>Cloud &amp; operations</h2>
+    <div class="prose">
+      <p>
+        We deploy to the cloud, automate the infrastructure, and keep it running. Scale up for
+        peak hours, scale down to save, and call us when something needs attention. You own the
+        accounts and the code.
+      </p>
+    </div>
+  </div>
+  <div class="prose-section">
+    <h2>And the odd stuff</h2>
+    <div class="prose">
+      <p>
+        Desktop software, geographic information systems (GIS), Raspberry Pi and other hardware.
+        If it runs code, we've probably built something like it.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="endnote">
+  <div class="container">
+    <div>
+      {% include "app/_wind.html" %}
+    <h2>Not sure which of these you need?</h2>
+      <p>Describe the problem. We'll scope it with you and come back with a plan.</p>
+      <a href="/#contact" class="btn btn-primary">Start a project</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

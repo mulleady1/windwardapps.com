@@ -1,0 +1,24 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %}Log in — Windward Apps{% endblock %}
+
+{% block content %}
+<section class="auth">
+  <div class="container">
+    <div class="card">
+      <form id="form" action="/login" method="post" data-ajax-form data-success-url="/">
+        <h1>Log in</h1>
+        <div class="message"></div>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary btn-block">Log in</button>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'app/ajaxForm.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %}Vendor Profile — Windward Apps{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  {% include "app/_wind.html" %}
+  <div class="container">
+    <h1>Advanced technology for government, at a fraction of the cost</h1>
+    <p class="lead">Windward Apps is a service-disabled veteran-owned small business building software for federal, state, and local agencies.</p>
+    <ul class="facts">
+      <li><span>Designation</span><strong>SDVOSB</strong></li>
+      <li><span>NAICS</span><strong>541511</strong></li>
+      <li><span>Role</span><strong>Prime and subcontractor</strong></li>
+    </ul>
+  </div>
+</section>
+
+<section class="container">
+  <div class="prose-section">
+    <h2>SDVOSB</h2>
+    <div class="prose">
+      <p>
+        Windward Apps is a service-disabled veteran-owned small business (SDVOSB) operating under
+        NAICS code 541511, custom computer programming services. We are eligible for SDVOSB
+        set-asides and work as both prime contractor and subcontractor for federal organizations,
+        notably the VA.
+      </p>
+    </div>
+  </div>
+  <div class="prose-section">
+    <h2>State &amp; local</h2>
+    <div class="prose">
+      <p>
+        We do business with state and local government agencies in Hawaiʻi and California.
+      </p>
+    </div>
+  </div>
+  <div class="prose-section">
+    <h2>Why agencies work with us</h2>
+    <div class="prose">
+      <p>
+        Firm-fixed-price for defined scope, with a short discovery phase first so the scope is
+        real. Time-and-materials for support and for work that is still taking shape. Working
+        software to review within the first sprint, and delivery in months, not years. Because
+        agent-driven development cuts the hours behind every feature, budgets that used to buy a
+        requirements study now buy a finished system.
+      </p>
+      <p>
+        Every line of code is reviewed by a senior engineer, and your agency owns the code, the
+        data, and the infrastructure accounts from day one.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="endnote">
+  <div class="container">
+    <div>
+      {% include "app/_wind.html" %}
+    <h2>Working on a procurement?</h2>
+      <p>Email us for a capability statement.</p>
+      <a href="mailto:info@windwardapps.com" class="btn btn-primary">info@windwardapps.com</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

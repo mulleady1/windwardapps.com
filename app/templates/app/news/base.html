@@ -1,0 +1,34 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block footer_cta %}
+<section class="newsletter">
+  <div class="container">
+    <div>
+      <h2>Hawaiʻi tech news and notes from the studio, in your inbox.</h2>
+      <p>Occasional, short, and easy to leave. No spam, ever.</p>
+    </div>
+    <form id="subscribe-form" action="/news/subscribe" method="POST" data-ajax-form>
+      {% csrf_token %}
+      <p>
+        <label for="subscribe-email">Email address</label>
+        <input id="subscribe-email" type="email" name="email" placeholder="you@example.com" required>
+      </p>
+      <button class="btn btn-primary" type="submit">Sign up</button>
+    </form>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'app/ajaxForm.js' %}"></script>
+<script>
+  $(function () {
+    var el = $('#subscribe-form')[0];
+    if (!el) return;
+    el._onSuccess = function () {
+      $(el).html('<div class="success-message">Good news: you\'ve been subscribed! Check your email soon for even more good news.</div>');
+    };
+  });
+</script>
+{% endblock %}

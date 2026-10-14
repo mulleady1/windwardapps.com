@@ -1,0 +1,179 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="hero">
+  {% include "app/_wind.html" %}
+  <div class="container">
+    <h1>Enterprise-scale systems in months, <span class="nowrap">not years<span class="dot">.</span></span></h1>
+    <p class="lead">Windward Apps is a software consultancy in Kailua, Hawaiʻi. We build custom systems for government agencies and businesses, with senior engineers directing AI agents.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">Start a project</a>
+      <a href="/services" class="btn btn-secondary">What we build</a>
+    </div>
+  </div>
+  <svg class="hero-waves" viewBox="0 0 1440 180" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="#eaf4fb" d="M0,96 C240,160 480,40 720,88 C960,136 1200,40 1440,96 L1440,180 L0,180 Z"/>
+    <path fill="#dcebf7" fill-opacity="0.9" d="M0,128 C240,180 480,80 720,120 C960,160 1200,80 1440,130 L1440,180 L0,180 Z"/>
+    <path fill="#ffffff" d="M0,156 C240,190 480,120 720,150 C960,180 1200,120 1440,158 L1440,180 L0,180 Z"/>
+  </svg>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="statement">
+      <h2>The game has changed.</h2>
+      <div class="prose">
+        <p>Custom software used to mean long stretches of planning, design and architecture before a line of code, then months of building, testing and rework. AI compresses all of it, with experienced engineers making the calls.</p>
+        <p>Systems that once needed a large team and a multi-year roadmap now ship in months. The cost drops with them, and we pass the difference on to you.</p>
+      </div>
+    </div>
+    <div class="points">
+      <div>
+        <h3>A fraction of the cost</h3>
+        <p>Agent-driven development collapses the effort behind every feature, and our pricing follows.</p>
+      </div>
+      <div>
+        <h3>Working software from the first sprint</h3>
+        <p>Something to click through early, then a better version every sprint after.</p>
+      </div>
+      <div>
+        <h3>Senior humans in charge</h3>
+        <p>Engineers design the system, review every change, and own the result. Accountability never gets delegated to a model.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-sand">
+  <div class="container">
+    <div class="section-header">
+      <h2>What we build</h2>
+      <p>From a single tool for one team to the system everyone is afraid to touch.</p>
+    </div>
+    <ul class="build">
+      <li>
+        <a href="/services">
+          <span class="build-index">01</span>
+          <span class="build-title">Custom applications</span>
+          <span class="build-desc">Web and mobile software built to your workflow. Portals, case management, field tools, internal systems.</span>
+          <span class="build-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a href="/services">
+          <span class="build-index">02</span>
+          <span class="build-title">Modernization and automation</span>
+          <span class="build-desc">Replace paper, spreadsheets and aging systems. Connect what's already there and automate the hand-offs between them.</span>
+          <span class="build-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a href="/services">
+          <span class="build-index">03</span>
+          <span class="build-title">AI integration</span>
+          <span class="build-desc">Connect the systems you already run to frontier models through their APIs and MCP servers, so assistants can read your records and act in your tools.</span>
+          <span class="build-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>How a project runs</h2>
+      <p>Short, visible, and in your hands early.</p>
+    </div>
+    <ol class="steps">
+      <li class="step">
+        <span class="step-num">1</span>
+        <div>
+          <h3>Scope it together</h3>
+          <p>We sit down with the people who'll use the system and agree on what done looks like, and what it will cost, before anything is built.</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-num">2</span>
+        <div>
+          <h3>Build in sprints</h3>
+          <p>A working version is in front of you within the first sprint, then every sprint after. You steer from there.</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-num">3</span>
+        <div>
+          <h3>Review and harden</h3>
+          <p>A senior engineer reviews every change. Security, accessibility and performance are checked before anything is called finished.</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-num">4</span>
+        <div>
+          <h3>Launch and support</h3>
+          <p>We deploy it, hand over clean documentation, and stay on call. Your team owns the code and the infrastructure.</p>
+        </div>
+      </li>
+    </ol>
+    <p class="stack-line">Built on mainstream, well-supported technology: Python, TypeScript, React, .NET, native iOS and Android, AWS. Nothing proprietary you can't take with you.</p>
+  </div>
+</section>
+
+<section class="section bg-navy">
+  <div class="container">
+    <h2>From clients</h2>
+    <div class="grid grid-2">
+      <div class="quote">
+        <blockquote>Windward Apps built us a web platform that automated several areas of our internal workflows, saving us countless person-hours per week.</blockquote>
+        <footer><strong>Daniel Everson</strong>, CEO, UnSocially</footer>
+      </div>
+      <div class="quote">
+        <blockquote>Thank you for creating MarkupAndChat! Immensely helpful for design reviews!</blockquote>
+        <footer>MarkupAndChat user</footer>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-sand" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Tell us what you're trying to build</h2>
+        <p>A few sentences is plenty. You'll hear back from an engineer, not a sales team.</p>
+        <ul class="contact-lines">
+          <li><a href="mailto:info@windwardapps.com">info@windwardapps.com</a></li>
+          <li><a href="https://www.linkedin.com/company/windward-apps" target="_blank" rel="noopener">Windward Apps on LinkedIn</a></li>
+          <li>Kailua, Hawaiʻi</li>
+        </ul>
+      </div>
+      <div class="card">
+        <form id="contact-form" action="/contact" method="post" data-ajax-form>
+          {% csrf_token %}
+          {{ form.as_p }}
+          <div class="h-captcha" data-sitekey="{{ captcha_key }}" data-callback="onCaptchaSuccess"></div>
+          <button id="contact-form-submit" class="btn btn-primary btn-block" type="submit" disabled>Send message</button>
+          <p class="form-note">Complete the captcha to enable the button.</p>
+          <script src="https://hcaptcha.com/1/api.js" async defer></script>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'app/ajaxForm.js' %}"></script>
+<script>
+  $(function () {
+    var el = $('#contact-form')[0];
+    el._onSuccess = function () {
+      $(el).html('<div class="success-message">Thanks! We\'ll be in touch soon.</div>');
+    };
+  });
+  function onCaptchaSuccess() {
+    document.getElementById('contact-form-submit').disabled = false;
+  }
+</script>
+{% endblock %}

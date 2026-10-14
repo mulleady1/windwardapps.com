@@ -1,0 +1,38 @@
+{% extends 'app/news/base.html' %}
+{% load static %}
+
+{% block title %}News — Windward Apps{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  {% include "app/_wind.html" %}
+  <div class="container">
+    <h1>Keep up with Windward Apps</h1>
+    <p class="lead">Notes from the studio, project launches, and Hawaiʻi tech.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {% if object_list %}
+    <ul class="news-grid">
+      {% for entry in object_list %}
+      <li>
+        <a href="/news/{{ entry.slug }}" class="card card-link news-card">
+          <div class="thumb">
+            {% if entry.image_url %}<img src="{% static 'app/images/news/' %}{{ entry.image_url }}" alt="">{% endif %}
+          </div>
+          <div class="body">
+            <h3>{{ entry.headline|default:entry.title }}</h3>
+            <div class="date">{{ entry.pub_date|date:'M j, Y' }}</div>
+          </div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <div class="news-empty">No entries yet. Check back soon.</div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
