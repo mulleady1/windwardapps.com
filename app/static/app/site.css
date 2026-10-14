@@ -661,7 +661,7 @@ form .field-message {
   font-size: 0.875rem;
   color: var(--danger);
 }
-form .success-message {
+.success-message {
   padding: 24px;
   border-radius: var(--radius-sm);
   background: var(--palm-soft);
@@ -1089,4 +1089,26 @@ form .success-message {
   .endnote .container > div {
     padding: 32px 24px;
   }
+}
+
+/* Forms: honeypot, htmx states, stacked newsletter form */
+.hp {
+  position: absolute !important;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+form.htmx-request .btn {
+  opacity: 0.6;
+  pointer-events: none;
+}
+.newsletter form {
+  display: block;
+}
+.newsletter form > p {
+  margin-bottom: 14px;
+}
+.newsletter form .h-captcha {
+  margin: 0 0 14px;
 }

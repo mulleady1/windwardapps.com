@@ -7,18 +7,13 @@
 <section class="auth">
   <div class="container">
     <div class="card">
-      <form id="form" action="/login" method="post" data-ajax-form data-success-url="/">
+      <form action="/login" method="post">
         <h1>Log in</h1>
-        <div class="message"></div>
         {% csrf_token %}
-        {{ form.as_p }}
+        {% include "app/_fields.html" %}
         <button type="submit" class="btn btn-primary btn-block">Log in</button>
       </form>
     </div>
   </div>
 </section>
-{% endblock %}
-
-{% block scripts %}
-<script src="{% static 'app/ajaxForm.js' %}"></script>
 {% endblock %}

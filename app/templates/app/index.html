@@ -149,31 +149,24 @@
         </ul>
       </div>
       <div class="card">
-        <form id="contact-form" action="/contact" method="post" data-ajax-form>
+        {% partialdef contact-form inline %}
+        <form action="/contact" method="post" hx-post="/contact" hx-target="this" hx-swap="outerHTML">
           {% csrf_token %}
-          {{ form.as_p }}
-          <div class="h-captcha" data-sitekey="{{ captcha_key }}" data-callback="onCaptchaSuccess"></div>
-          <button id="contact-form-submit" class="btn btn-primary btn-block" type="submit" disabled>Send message</button>
+          {% include "app/_fields.html" %}
+          <div class="h-captcha" data-sitekey="{{ captcha_key }}"></div>
+          <button class="btn btn-primary btn-block" type="submit" disabled>Send message</button>
           <p class="form-note">Complete the captcha to enable the button.</p>
-          <script src="https://hcaptcha.com/1/api.js" async defer></script>
         </form>
+        {% endpartialdef %}
+        {% partialdef contact-success %}
+        <div class="success-message">Thanks! We'll be in touch soon.</div>
+        {% endpartialdef %}
       </div>
     </div>
   </div>
 </section>
 {% endblock %}
 
-{% block scripts %}
-<script src="{% static 'app/ajaxForm.js' %}"></script>
-<script>
-  $(function () {
-    var el = $('#contact-form')[0];
-    el._onSuccess = function () {
-      $(el).html('<div class="success-message">Thanks! We\'ll be in touch soon.</div>');
-    };
-  });
-  function onCaptchaSuccess() {
-    document.getElementById('contact-form-submit').disabled = false;
-  }
-</script>
+{% block head %}
+<script src="https://js.hcaptcha.com/1/api.js?render=explicit&onload=wwaCaptchaReady" async defer></script>
 {% endblock %}

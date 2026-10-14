@@ -9,9 +9,23 @@ logger = logging.getLogger(__name__)
 
 
 class BaseForm(forms.Form):
+    """Public form: no label suffix, a honeypot field, and email delivery."""
+
+    # Bots fill every field they can find. Humans never see this one.
+    website = forms.CharField(
+        required=False,
+        label='Leave this empty',
+        widget=forms.TextInput(attrs={'autocomplete': 'off', 'tabindex': '-1'}),
+    )
+
     def __init__(self, *args, **kwargs):
         kwargs.setdefault('label_suffix', '')
         super().__init__(*args, **kwargs)
+        self.order_fields([name for name in self.fields if name != 'website'] + ['website'])
+
+    @property
+    def is_bot(self):
+        return bool(self.cleaned_data.get('website'))
 
     def send_email(self, data):
         """Deliver an email through the configured API. Skipped when none is configured."""
@@ -47,10 +61,14 @@ class ContactForm(BaseForm):
         })
 
 
-class LoginForm(BaseForm):
+class SubscribeForm(BaseForm):
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'placeholder': 'you@example.com'}))
+
+
+class LoginForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput())
 
-
-class SubscribeForm(BaseForm):
-    email = forms.EmailField()
+    def __init__(self, *args, **kwargs):
+        kwargs.setdefault('label_suffix', '')
+        super().__init__(*args, **kwargs)

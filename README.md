@@ -1,7 +1,9 @@
 # windwardapps.com
 
-Django 5.2 site for Windward Apps. One Django app (`app`), one settings module,
-SQLite, hCaptcha on the contact form, and a Mailgun-style HTTP API for email.
+Django 6.1 site for Windward Apps. One Django app (`app`), one settings module,
+SQLite, htmx 4 for the forms, hCaptcha, and a Mailgun-style HTTP API for email.
+
+Django 6.1 is a regular release; move to 6.2 LTS when it ships (April 2027).
 
 ## Layout
 
@@ -10,7 +12,7 @@ manage.py            Django entry point (defaults to project.settings)
 project/             settings.py, urls.py, wsgi.py
 app/                 the whole site: models, views, forms, templates, static
   templates/app/     page templates; news/ for the blog, email/ for emails
-  static/app/        site.css, images, jQuery + ajaxForm.js
+  static/app/        site.css, images, vendored htmx.min.js, forms.js (captcha mounting)
 requirements.txt     pinned dependencies
 deploy.sh            rsync + restart on the production host
 .env                 local environment variables (not committed)
@@ -34,6 +36,17 @@ configured, outgoing mail is logged instead of sent.
 .venv/bin/python manage.py test              # run the test suite
 .venv/bin/python manage.py createsuperuser   # account for /admin and /login
 ```
+
+## Forms
+
+The contact and newsletter forms post with htmx. Each form is a template
+partial (`{% partialdef %}`); the view answers with the re-rendered form on
+a 422, or the success partial on a 200, and htmx swaps the form in place.
+
+Every public submission passes three checks in `GuardedFormView`: a honeypot
+field (bots that fill it get a fake success), a rate limit of 5 per IP and 30
+site-wide per hour per form (backed by a file cache in `.cache/`), and
+hCaptcha when `CAPTCHA_ENFORCE` is on. Newsletter signups never send email.
 
 ## Configuration
 

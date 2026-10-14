@@ -18,6 +18,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'app/site.css' %}">
+  <script src="{% static 'app/htmx.min.js' %}" defer></script>
+  <script src="{% static 'app/forms.js' %}" defer></script>
+  <script>
+    // hCaptcha calls this when its API is ready; forms.js may or may not have run yet.
+    window.wwaCaptchaReady = function () {
+      window.__captchaReady = true;
+      if (window.wwaMountCaptchas) window.wwaMountCaptchas(document.documentElement);
+    };
+  </script>
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XG4F5L94FE"></script>
@@ -96,7 +105,6 @@
     </div>
   </footer>
 
-  <script src="{% static 'app/jquery.min.js' %}"></script>
   <script>
     (function () {
       var toggle = document.querySelector('.nav-toggle');

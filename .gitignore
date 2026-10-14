@@ -31,3 +31,4 @@ dump.json
 /data
 /static
 /coverage
+/.cache

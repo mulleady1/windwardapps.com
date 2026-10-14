@@ -1,0 +1,13 @@
+{# Renders a form's fields with errors. The honeypot field is visually hidden. #}
+{% if form.non_field_errors %}<div class="message" role="alert">{{ form.non_field_errors.0 }}</div>{% endif %}
+{% for field in form %}
+  {% if field.name == 'website' %}
+  <p class="hp" aria-hidden="true"><label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}</p>
+  {% else %}
+  <p>
+    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+    {{ field }}
+    {% if field.errors %}<span class="field-message">{{ field.errors.0 }}</span>{% endif %}
+  </p>
+  {% endif %}
+{% endfor %}

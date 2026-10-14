@@ -109,6 +109,14 @@ DATABASES = {
 # Existing tables were created with 32-bit ids; keep new ones consistent.
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
+# Shared across gunicorn workers; backs the rate limiter on public forms.
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': str(BASE_DIR / '.cache'),
+    }
+}
+
 # --- Auth -------------------------------------------------------------------
 
 LOGIN_URL = '/login'
