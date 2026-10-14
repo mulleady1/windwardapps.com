@@ -9,6 +9,7 @@ urlpatterns = [
     path('about', TemplateView.as_view(template_name='app/about.html'), name='about'),
     path('services', TemplateView.as_view(template_name='app/services.html'), name='services'),
     path('vendor-profile', TemplateView.as_view(template_name='app/vendorprofile.html'), name='vendorprofile'),
+    path('test', TemplateView.as_view(template_name='app/test.html'), name='test'),
     path('login', views.LoginView.as_view(), name='login'),
     path('logout', views.LogoutView.as_view(), name='logout'),
     path('news', views.NewsListView.as_view(), name='news-list'),

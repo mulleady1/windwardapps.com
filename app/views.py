@@ -120,7 +120,7 @@ class SubscribeView(AjaxFormView):
             subscriber.unsubscribe_date = None
             subscriber.save()
 
-        form.send_email()
+        # Confirmation emails are intentionally not sent; the list drew too much spam signup.
         return super().form_valid(form)
 
 

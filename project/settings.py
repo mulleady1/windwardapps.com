@@ -16,6 +16,7 @@ repo root, which is loaded if present).
     CAPTCHA_KEY             hCaptcha site key (public)
     CAPTCHA_SECRET          hCaptcha secret
     CAPTCHA_ENFORCE=1       reject contact submissions that fail the captcha
+    WA_BAD_EMAILS           comma separated senders whose contact messages are dropped
 """
 
 import os
@@ -154,6 +155,7 @@ LOGGING = {
 # --- Site-specific ----------------------------------------------------------
 
 CONTACT_EMAIL = env('WA_CONTACT_EMAIL')
+BAD_EMAILS = {e.strip().lower() for e in env('WA_BAD_EMAILS').split(',') if e.strip()}
 EMAIL_API_URL = env('WA_EMAIL_API_URL')
 EMAIL_API_KEY = env('WA_EMAIL_API_KEY')
 

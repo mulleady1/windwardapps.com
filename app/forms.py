@@ -34,6 +34,11 @@ class ContactForm(BaseForm):
     message = forms.CharField(widget=forms.Textarea)
 
     def send_email(self):
+        sender = self.cleaned_data['email']
+        if sender.lower() in settings.BAD_EMAILS:
+            logger.info('Dropping contact message from blocked sender %s', sender)
+            return None
+
         return super().send_email({
             'from': 'Windward Apps <noreply@windwardapps.com>',
             'to': [settings.CONTACT_EMAIL],
@@ -49,11 +54,3 @@ class LoginForm(BaseForm):
 
 class SubscribeForm(BaseForm):
     email = forms.EmailField()
-
-    def send_email(self):
-        return super().send_email({
-            'from': 'Windward Apps <newsletter@windwardapps.com>',
-            'to': self.cleaned_data['email'],
-            'subject': 'Thanks for subscribing!',
-            'html': render_to_string('app/email/subscribe-success.html', self.cleaned_data),
-        })

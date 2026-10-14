@@ -11,7 +11,7 @@ CONTACT = {'name': 'Ada', 'email': 'ada@example.com', 'message': 'hi', 'h-captch
 
 class PagesTestCase(TestCase):
     def test_pages_render(self):
-        for path in ['/', '/about', '/services', '/vendor-profile', '/news', '/login']:
+        for path in ['/', '/about', '/services', '/vendor-profile', '/news', '/login', '/test']:
             with self.subTest(path=path):
                 self.assertEqual(self.client.get(path).status_code, 200)
 
@@ -33,6 +33,14 @@ class ContactFormTestCase(TestCase):
     def test_failed_captcha_is_rejected_when_enforced(self, _verify):
         res = self.client.post('/contact', CONTACT)
         self.assertEqual(res.status_code, 400)
+
+    @override_settings(BAD_EMAILS={'ada@example.com'})
+    @patch('app.views.verify_captcha', return_value={'success': True})
+    @patch('app.forms.BaseForm.send_email')
+    def test_blocked_sender_is_dropped_silently(self, send, _verify):
+        res = self.client.post('/contact', CONTACT)
+        self.assertEqual(res.status_code, 200)
+        send.assert_not_called()
 
 
 class NewsTestCase(TestCase):

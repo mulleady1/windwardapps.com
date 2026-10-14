@@ -19,7 +19,7 @@ deploy.sh            rsync + restart on the production host
 ## Run locally
 
 ```sh
-python3.13 -m venv .venv
+python3 -m venv .venv                # Python 3.12 or newer
 .venv/bin/pip install -r requirements.txt
 .venv/bin/python manage.py migrate
 .venv/bin/python manage.py runserver
@@ -55,19 +55,11 @@ configured, outgoing mail is logged instead of sent.
 ./deploy.sh
 ```
 
-This rsyncs the code to the `wwa` host and runs its `restart.sh`. The server
-must have Python 3.13 and `DJANGO_SETTINGS_MODULE=project.settings` (or
-nothing at all, since that is the default), plus the variables above. The
-reverse proxy must send `X-Forwarded-Proto` so Django knows requests are HTTPS.
+Pushes `master` to GitHub, then on the `wwa` host (`/var/www/windwardapps.com`)
+pulls, installs requirements into `env/`, migrates, collects static files, and
+sends gunicorn a HUP so it reloads workers without downtime. Production reads
+its variables from a `.env` file in that directory, the same way local does.
 
-### One-time migration step after the single-app consolidation
-
-The news models moved from the old `blog` app into `app`, keeping their table
-names. On the first deploy of this layout, run on the server:
-
-```sh
-python manage.py migrate --fake-initial
-```
-
-That records the new `app` migration against the existing tables without
-touching data. Later deploys use plain `migrate`.
+Gunicorn runs under systemd as `windwardapps.com.service`; nginx proxies to
+it on port 9100 and serves `/static`, `/media`, `/iwredss` and `/.well-known`
+from the app directory directly.
