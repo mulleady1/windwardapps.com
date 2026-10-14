@@ -53,11 +53,11 @@ hCaptcha when `CAPTCHA_ENFORCE` is on. Newsletter signups never send email.
 | Variable | Purpose |
 | --- | --- |
 | `DEBUG` | `1` for local development. Off by default. |
-| `WA_SECRET_KEY` | Required when `DEBUG` is off. |
+| `SECRET_KEY` | Required when `DEBUG` is off. |
 | `ALLOWED_HOSTS` | Comma separated. Defaults to `windwardapps.com,www.windwardapps.com`. |
 | `STATIC_ROOT` | Where `collectstatic` writes. Defaults to `./static`. |
-| `WA_CONTACT_EMAIL` | Recipient of contact-form messages. |
-| `WA_EMAIL_API_URL`, `WA_EMAIL_API_KEY` | Email API endpoint and key. |
+| `CONTACT_EMAIL` | Recipient of contact-form messages. |
+| `EMAIL_API_URL`, `EMAIL_API_KEY` | Email API endpoint and key. |
 | `CAPTCHA_KEY`, `CAPTCHA_SECRET` | hCaptcha site key and secret. |
 | `CAPTCHA_ENFORCE` | `1` to reject contact submissions that fail the captcha. Off by default. |
 

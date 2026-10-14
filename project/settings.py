@@ -6,16 +6,16 @@ local and production comes from environment variables (or a .env file at the
 repo root, which is loaded if present).
 
     DEBUG=1                 turn on debug mode (local only)
-    WA_SECRET_KEY           required when DEBUG is off
+    SECRET_KEY              required when DEBUG is off
     ALLOWED_HOSTS           comma separated; defaults to windwardapps.com
     STATIC_ROOT             where collectstatic writes; defaults to ./static
-    WA_CONTACT_EMAIL        where contact-form messages are delivered
-    WA_EMAIL_API_URL        Mailgun-style messages endpoint
-    WA_EMAIL_API_KEY        API key for the endpoint above
+    CONTACT_EMAIL           where contact-form messages are delivered
+    EMAIL_API_URL           Mailgun-style messages endpoint
+    EMAIL_API_KEY           API key for the endpoint above
     CAPTCHA_KEY             hCaptcha site key (public)
     CAPTCHA_SECRET          hCaptcha secret
     CAPTCHA_ENFORCE=1       reject contact submissions that fail the captcha
-    WA_BAD_EMAILS           comma separated senders whose contact messages are dropped
+    BAD_EMAILS              comma separated senders whose contact messages are dropped
 """
 
 import os
@@ -45,9 +45,9 @@ def env_list(name, default):
 
 DEBUG = env_bool('DEBUG')
 
-SECRET_KEY = env('WA_SECRET_KEY') or ('dev-only-insecure-key' if DEBUG else '')
+SECRET_KEY = env('SECRET_KEY') or ('dev-only-insecure-key' if DEBUG else '')
 if not SECRET_KEY:
-    raise ImproperlyConfigured('WA_SECRET_KEY must be set when DEBUG is off')
+    raise ImproperlyConfigured('SECRET_KEY must be set when DEBUG is off')
 
 ALLOWED_HOSTS = env_list('ALLOWED_HOSTS', ['*'] if DEBUG else ['windwardapps.com', 'www.windwardapps.com'])
 CSRF_TRUSTED_ORIGINS = [f'https://{host}' for host in ALLOWED_HOSTS if host != '*']
@@ -156,10 +156,10 @@ LOGGING = {
 
 # --- Site-specific ----------------------------------------------------------
 
-CONTACT_EMAIL = env('WA_CONTACT_EMAIL')
-BAD_EMAILS = {e.strip().lower() for e in env('WA_BAD_EMAILS').split(',') if e.strip()}
-EMAIL_API_URL = env('WA_EMAIL_API_URL')
-EMAIL_API_KEY = env('WA_EMAIL_API_KEY')
+CONTACT_EMAIL = env('CONTACT_EMAIL')
+BAD_EMAILS = {e.strip().lower() for e in env('BAD_EMAILS').split(',') if e.strip()}
+EMAIL_API_URL = env('EMAIL_API_URL')
+EMAIL_API_KEY = env('EMAIL_API_KEY')
 
 CAPTCHA_KEY = env('CAPTCHA_KEY')
 CAPTCHA_SECRET = env('CAPTCHA_SECRET')
