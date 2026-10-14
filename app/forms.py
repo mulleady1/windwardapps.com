@@ -33,12 +33,24 @@ class BaseForm(forms.Form):
             logger.warning('EMAIL_API_URL is not set; not sending "%s" to %s', data['subject'], data['to'])
             return None
 
-        return requests.post(
-            settings.EMAIL_API_URL,
-            auth=('api', settings.EMAIL_API_KEY),
-            data=data,
-            timeout=10,
-        )
+        subject, to = data['subject'], data['to']
+        try:
+            response = requests.post(
+                settings.EMAIL_API_URL,
+                auth=('api', settings.EMAIL_API_KEY),
+                data=data,
+                timeout=10,
+            )
+        except requests.RequestException:
+            logger.exception('Email "%s" to %s failed to send', subject, to)
+            return None
+
+        body = response.text.strip()[:500]
+        if response.ok:
+            logger.info('Email "%s" to %s sent: HTTP %s %s', subject, to, response.status_code, body)
+        else:
+            logger.error('Email "%s" to %s rejected: HTTP %s %s', subject, to, response.status_code, body)
+        return response
 
 
 class ContactForm(BaseForm):
