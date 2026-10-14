@@ -9,7 +9,6 @@ repo root, which is loaded if present).
     WA_SECRET_KEY           required when DEBUG is off
     ALLOWED_HOSTS           comma separated; defaults to windwardapps.com
     STATIC_ROOT             where collectstatic writes; defaults to ./static
-    LOG_FILE                production log path; defaults to ./windwardapps.log
     WA_CONTACT_EMAIL        where contact-form messages are delivered
     WA_EMAIL_API_URL        Mailgun-style messages endpoint
     WA_EMAIL_API_KEY        API key for the endpoint above
@@ -127,27 +126,22 @@ STATIC_URL = '/static/'
 STATIC_ROOT = env('STATIC_ROOT', str(BASE_DIR / 'static'))
 
 # --- Logging ----------------------------------------------------------------
+# Everything goes to stderr. Under systemd that lands in the journal:
+#   journalctl -u windwardapps.com -f
 
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
         'standard': {
-            'format': '[%(asctime)s][%(levelname)s][%(name)s] %(message)s',
-            'datefmt': '%Y-%m-%dT%H:%M:%S',
+            'format': '[%(levelname)s][%(name)s] %(message)s',
         },
     },
     'handlers': {
         'console': {'class': 'logging.StreamHandler', 'formatter': 'standard'},
-        'file': {
-            'class': 'logging.FileHandler',
-            'formatter': 'standard',
-            'filename': env('LOG_FILE', str(BASE_DIR / 'windwardapps.log')),
-            'delay': True,
-        },
     },
     'root': {
-        'handlers': ['console'] if DEBUG else ['console', 'file'],
+        'handlers': ['console'],
         'level': 'DEBUG' if DEBUG else 'INFO',
     },
 }

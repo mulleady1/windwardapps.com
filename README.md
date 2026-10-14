@@ -43,7 +43,6 @@ configured, outgoing mail is logged instead of sent.
 | `WA_SECRET_KEY` | Required when `DEBUG` is off. |
 | `ALLOWED_HOSTS` | Comma separated. Defaults to `windwardapps.com,www.windwardapps.com`. |
 | `STATIC_ROOT` | Where `collectstatic` writes. Defaults to `./static`. |
-| `LOG_FILE` | Production log file. Defaults to `./windwardapps.log`. |
 | `WA_CONTACT_EMAIL` | Recipient of contact-form messages. |
 | `WA_EMAIL_API_URL`, `WA_EMAIL_API_KEY` | Email API endpoint and key. |
 | `CAPTCHA_KEY`, `CAPTCHA_SECRET` | hCaptcha site key and secret. |
@@ -62,4 +61,5 @@ its variables from a `.env` file in that directory, the same way local does.
 
 Gunicorn runs under systemd as `windwardapps.com.service`; nginx proxies to
 it on port 9100 and serves `/static`, `/media`, `/iwredss` and `/.well-known`
-from the app directory directly.
+from the app directory directly. Application logs go to stderr, so read them
+with `journalctl -u windwardapps.com`.
