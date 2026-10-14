@@ -883,7 +883,10 @@ form .field-message {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 40px;
-  align-items: center;
+  align-items: start;
+}
+.newsletter .container > div:first-child {
+  padding-top: 6px;
 }
 .newsletter h2 {
   font-size: clamp(1.5rem, 1.3rem + 0.8vw, 2rem);
