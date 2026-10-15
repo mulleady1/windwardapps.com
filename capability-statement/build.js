@@ -56,7 +56,7 @@ const headerTable = new Table({
     ] }),
     new TableCell({ width: { size: SIDE_W, type: WidthType.DXA }, borders: cellNone, verticalAlign: VerticalAlign.CENTER, margins: { right: 0 }, children: [
       new Paragraph({ alignment: AlignmentType.RIGHT, spacing: { after: 20 }, children: [new TextRun({ text: 'CAPABILITY STATEMENT', font: FONT, size: 22, bold: true, color: NAVY, characterSpacing: 30 })] }),
-      new Paragraph({ alignment: AlignmentType.RIGHT, spacing: { after: 0 }, children: [new TextRun({ text: 'SDVOSB  ·  SBA VetCert certified', font: FONT, size: 16, color: PALM, bold: true })] }),
+      new Paragraph({ alignment: AlignmentType.RIGHT, spacing: { after: 0 }, children: [new TextRun({ text: 'SDVOSB  ·  SBA certified', font: FONT, size: 16, color: PALM, bold: true })] }),
     ] }),
   ] })],
 });
@@ -115,7 +115,7 @@ const side = [
   kv('UEI', 'LVJ7FKGSFLF4'),
   kv('CAGE', '84XP7'),
   kv('SAM.gov', 'Active'),
-  kv('Status', 'SDVOSB, SBA VetCert certified'),
+  kv('Status', 'SDVOSB, SBA certified'),
   kv('Size', 'Small business, all listed NAICS'),
   kv('Role', 'Prime and subcontractor'),
   kv('Contracts', 'Firm-fixed-price, T&M'),
