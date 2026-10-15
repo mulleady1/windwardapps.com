@@ -20,7 +20,7 @@ const ph = (text) => new TextRun({ text, font: FONT, size: 18, color: '7A5A00', 
 const p = (children, o = {}) => new Paragraph({ spacing: { after: 80, line: 264 }, ...o, children: Array.isArray(children) ? children : [children] });
 
 const h2 = (text) => new Paragraph({
-  spacing: { before: 200, after: 80 },
+  spacing: { before: 160, after: 80 },
   border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: OCEAN, space: 2 } },
   children: [new TextRun({ text: text.toUpperCase(), font: FONT, size: 18, bold: true, color: NAVY, characterSpacing: 20 })],
 });
@@ -30,7 +30,7 @@ const sideH = (text) => new Paragraph({
 });
 const bullet = (lead, rest) => new Paragraph({
   numbering: { reference: 'bullets', level: 0 },
-  spacing: { after: 60, line: 252 },
+  spacing: { after: 40, line: 240 },
   children: [
     ...(lead ? [new TextRun({ text: lead + ' ', font: FONT, size: 18, bold: true, color: INK })] : []),
     ...(Array.isArray(rest) ? rest : [t(rest)]),
@@ -67,17 +67,17 @@ const tagline = new Paragraph({
 });
 const overview = p([
   t('Windward Apps is a service-disabled veteran-owned software consultancy in Kailua, Hawaiʻi. We build and modernize the systems agencies actually run on: custom applications, public portals, data pipelines, automation, and AI integration. Our engineers direct AI agents that write, test and refactor code, and a senior engineer reviews every line before it ships. That is how a small team delivers enterprise-scale work in months instead of years, at a fraction of the traditional cost.'),
-], { spacing: { after: 120, line: 264 } });
+], { spacing: { after: 100, line: 252 } });
 
 // ----- Main column -----
 const main = [
   h2('Core competencies'),
-  bullet('Custom applications.', 'Public portals, case and workflow management, field data collection, internal tools, and the integrations that tie them together. Web first; native iOS and Android when hardware access or offline use requires it.'),
+  bullet('Custom applications.', 'Public portals, case and workflow management, field data collection, internal tools, and the integrations between them. Web first; native iOS and Android when needed.'),
   bullet('Modernization and automation.', 'Incremental replacement of paper, fax, spreadsheet and legacy processes, with data kept intact and hand-offs automated.'),
   bullet('Data and reporting.', 'Pipelines that pull from existing systems into one source of truth, feeding dashboards and required reporting automatically.'),
-  bullet('AI integration.', 'Document intake, summarization and search across agency records; MCP servers that let an assistant act on the tools staff already use. Access controls and audit trails are part of the build.'),
+  bullet('AI integration.', 'Document intake, summarization and search across agency records; MCP servers that let an assistant act on existing tools. Access controls and audit trails included.'),
   bullet('Cloud and operations.', 'Deployment, infrastructure automation, and ongoing operations, with the agency owning every account.'),
-  bullet('GIS, desktop and hardware.', 'Geographic information systems, desktop software, and embedded devices.'),
+  bullet('GIS, desktop and hardware.', 'Geographic information systems, desktop software, embedded devices.'),
 
   h2('Differentiators'),
   bullet('Agent-driven development.', 'AI agents do the hours behind every feature. Budgets that used to buy a requirements study now buy a finished system.'),
@@ -88,15 +88,15 @@ const main = [
   bullet('SDVOSB.', 'Eligible for set-aside and sole-source awards. Prime or subcontractor.'),
 
   h2('Past performance'),
+  pp('Hawaiʻi Department of Health', 'COVID-19 vaccine reporting pipeline', [
+    t('With the first vaccine shipments en route in late 2020 and the state immunization registry offline, the CDC required every vaccination event reported before approving further shipments. Working with DOH, the State Epidemiologist and the CDC, designed and built the ETL tool that pulled records from CDC\u2019s VAMS and produced the daily datasets CDC required. Six months through handoff, as subcontractor to Hawaiʻi Data Collaborative.'),
+  ], 'Hawaiʻi Data Collaborative; contact details on request'),
   pp('Hawaiʻi Commission on Water Resource Management', 'GIS software', [
     t('Custom geographic information system software for the State of Hawaiʻi agency, under the Department of Land and Natural Resources, that regulates the state\u2019s water resources.'),
   ], 'Roy Hardy, roy.hardy@hawaii.gov'),
   pp('Shine Rite', 'On-demand mobile car-wash marketplace', [
     t('Customer and provider mobile apps with scheduling, dispatch and payments. Launched and ran in production in Texas for several years.'),
   ], 'Trevor Williams, trevorwilliamsatx@gmail.com'),
-  pp('Square Feet Hawaiʻi', 'Real estate platform', [
-    t('Web platform for buying and selling property: listings and search, agent-to-client messaging, and agent note-taking in one system. Built to launch readiness before the venture closed.'),
-  ], 'Luke, luke@squarefeethawaii.com'),
 ];
 function pp(org, project, scope, poc) {
   return [
@@ -104,8 +104,8 @@ function pp(org, project, scope, poc) {
       new TextRun({ text: org, font: FONT, size: 18, bold: true, color: INK }),
       new TextRun({ text: '  ·  ' + project, font: FONT, size: 18, color: MUTED }),
     ] }),
-    new Paragraph({ spacing: { after: 20, line: 252 }, children: scope }),
-    new Paragraph({ spacing: { after: 80 }, children: [new TextRun({ text: 'Reference: ' + poc, font: FONT, size: 16, color: MUTED })] }),
+    new Paragraph({ spacing: { after: 20, line: 240 }, children: scope }),
+    new Paragraph({ spacing: { after: 80 }, children: [new TextRun({ text: 'Reference: ' + poc, font: FONT, size: 15, color: MUTED })] }),
   ];
 }
 
@@ -160,7 +160,7 @@ const doc = new Document({
   numbering: { config: [{ reference: 'bullets', levels: [{ level: 0, format: LevelFormat.BULLET, text: '•', alignment: AlignmentType.LEFT,
     style: { paragraph: { indent: { left: 240, hanging: 240 } }, run: { color: OCEAN } } }] }] },
   sections: [{
-    properties: { page: { size: { width: PAGE_W, height: 15840 }, margin: { top: 864, bottom: 720, left: MARGIN, right: MARGIN, footer: 400 } } },
+    properties: { page: { size: { width: PAGE_W, height: 15840 }, margin: { top: 720, bottom: 620, left: MARGIN, right: MARGIN, footer: 400 } } },
     footers: { default: new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER, border: { top: { style: BorderStyle.SINGLE, size: 4, color: LINE, space: 4 } },
       children: [new TextRun({ text: 'Windward Apps  ·  Service-disabled veteran-owned small business  ·  UEI LVJ7FKGSFLF4  ·  CAGE 84XP7  ·  windwardapps.com', font: FONT, size: 14, color: MUTED })] })] }) },
     children: [headerTable, tagline, overview, body],
