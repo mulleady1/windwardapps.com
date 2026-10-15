@@ -757,6 +757,69 @@ form .field-message {
   font-weight: 600;
   color: var(--muted);
 }
+.reg {
+  margin: 0;
+  display: grid;
+  gap: 10px 0;
+}
+.reg div {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+.reg dt {
+  color: var(--muted);
+}
+.reg dd {
+  margin: 0;
+  font-weight: 600;
+  color: var(--ink);
+}
+.prose-section .prose h3 {
+  margin-top: 36px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.codes {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.codes th,
+.codes td {
+  padding: 10px 0;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+.codes th {
+  width: 96px;
+  padding-right: 16px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.codes .tag {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--palm-soft);
+  color: var(--palm-deep);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  vertical-align: 1px;
+}
 .office {
   margin: 1.1em 0 0;
   font-style: normal;
@@ -1070,6 +1133,10 @@ form .field-message {
     grid-template-columns: 1fr;
     gap: 16px;
     padding: 44px 0;
+  }
+  .reg div {
+    grid-template-columns: 1fr;
+    gap: 2px;
   }
   .newsletter .container {
     grid-template-columns: 1fr;
