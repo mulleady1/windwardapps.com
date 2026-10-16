@@ -66,16 +66,16 @@ const tagline = new Paragraph({
   children: [new TextRun({ text: 'Enterprise-scale systems for government, in months, not years.', font: FONT, size: 28, bold: true, color: NAVY })],
 });
 const overview = p([
-  t('Windward Apps is a service-disabled veteran-owned software consultancy in Kailua, Hawaiʻi. We build and modernize the systems agencies actually run on: custom applications, public portals, data pipelines, automation, and AI integration. Our engineers direct AI agents that write, test and refactor code, and a senior engineer reviews every line before it ships. That is how a small team delivers enterprise-scale work in months instead of years, at a fraction of the traditional cost.'),
+  t('Windward Apps is a service-disabled veteran-owned software consultancy in Kailua, Hawaiʻi. We build and modernize the systems agencies actually run on: custom applications, AI integration, public portals, data pipelines, and automation. Our engineers direct AI agents that write, test and refactor code, and a senior engineer reviews every line before it ships. That is how a small team delivers enterprise-scale work in months instead of years, at a fraction of the traditional cost.'),
 ], { spacing: { after: 100, line: 252 } });
 
 // ----- Main column -----
 const main = [
   h2('Core competencies'),
-  bullet('Custom applications.', 'Public portals, case and workflow management, field data collection, internal tools, and the integrations between them. Web first; native iOS and Android when needed.'),
+  bullet('Custom applications.', 'Web and mobile applications built around how people actually work, from major organizational systems to startup platforms and internal tools, connected to what is already in place.'),
+  bullet('AI integration.', 'Document intake, summarization and search across agency records; MCP servers that let an assistant act on existing tools. Access controls and audit trails included.'),
   bullet('Modernization and automation.', 'Incremental replacement of paper, fax, spreadsheet and legacy processes, with data kept intact and hand-offs automated.'),
   bullet('Data and reporting.', 'Pipelines that pull from existing systems into one source of truth, feeding dashboards and required reporting automatically.'),
-  bullet('AI integration.', 'Document intake, summarization and search across agency records; MCP servers that let an assistant act on existing tools. Access controls and audit trails included.'),
   bullet('Cloud and operations.', 'Deployment, infrastructure automation, and ongoing operations, with the agency owning every account.'),
   bullet('GIS, desktop and hardware.', 'Geographic information systems, desktop software, embedded devices.'),
 
@@ -89,7 +89,7 @@ const main = [
 
   h2('Past performance'),
   pp('Hawaiʻi Department of Health', 'COVID-19 vaccine reporting pipeline', [
-    t('With the first vaccine shipments en route in late 2020 and the state immunization registry offline, the CDC required every vaccination event reported before approving further shipments. Working with DOH, the State Epidemiologist and the CDC, designed and built the ETL tool that pulled records from CDC\u2019s VAMS and produced the daily datasets CDC required. Six months through handoff, as subcontractor to Hawaiʻi Data Collaborative.'),
+    t('Built the pipeline that turned CDC VAMS records into the daily vaccination reports CDC required before releasing more vaccine to Hawaiʻi in late 2020. Six months with DOH, the State Epidemiologist and CDC, as subcontractor to Hawaiʻi Data Collaborative.'),
   ], 'Hawaiʻi Data Collaborative; contact details on request'),
   pp('Hawaiʻi Commission on Water Resource Management', 'GIS software', [
     t('Custom geographic information system software for the State of Hawaiʻi agency, under the Department of Land and Natural Resources, that regulates the state\u2019s water resources.'),
